@@ -1,0 +1,30 @@
+{
+  "resourceType": "Patient",
+  "name": {
+    "use": "official",
+    "given": ["Cao Tuan"],
+    "family": "Kiet"
+  },
+  "gender": "male",
+  "birthDate": "2002-04-08",
+  "telecom": [
+    {
+      "value": "0963985652",
+      "use": "mobile",
+      "system": "phone"
+    },
+    {
+      "system": "email",
+      "value": "caotuankietc3a@gmail.com",
+      "use": "home"
+    }
+  ],
+  "address": [
+    {
+      "country": "VN",
+      "city": "HCM",
+      "use": "home",
+      "line": ["5 Chan Hung p6 Q.Tan Binh"]
+    }
+  ]
+}

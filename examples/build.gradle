@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.hapi-hl7v2'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-jaxrsserver-base:6.4.4'
+  implementation 'org.springframework.boot:spring-boot-starter-jersey:3.0.6'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-base:6.4.4'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-client:6.4.4'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-r4:6.4.4'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:6.4.4'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-r5:6.4.4'
+  implementation 'ca.uhn.hapi.fhir:hapi-fhir-server:6.4.4'
+  compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+  implementation 'ca.uhn.hapi:hapi-structures-v26:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v25:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v24:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v231:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v23:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v22:2.3'
+  implementation 'ca.uhn.hapi:hapi-structures-v21:2.3'
+  implementation 'ca.uhn.hapi:hapi-hl7overhttp:2.3'
+  implementation 'ca.uhn.hapi:hapi-base:2.3'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
