@@ -2,7 +2,9 @@
   "resourceType": "Patient",
   "name": {
     "use": "official",
-    "given": ["Cao Tuan"],
+    "given": [
+      "Cao Tuan"
+    ],
     "family": "Kiet"
   },
   "gender": "male",
@@ -24,7 +26,9 @@
       "country": "VN",
       "city": "HCM",
       "use": "home",
-      "line": ["5 Chan Hung p6 Q.Tan Binh"]
+      "line": [
+        "5 Chan Hung p6 Q.Tan Binh"
+      ]
     }
   ]
 }
