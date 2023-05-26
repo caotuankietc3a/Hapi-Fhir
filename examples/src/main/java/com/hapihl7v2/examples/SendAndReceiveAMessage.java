@@ -52,7 +52,7 @@ public class SendAndReceiveAMessage {
      * messages. Of course, we coud just as easily have specified a different
      * handler.
      */
-    server.registerApplication("ADT", "A02", handler);
+    // server.registerApplication("ADT", "A02", handler);
 
     /*
      * Another option would be to specify a single application to handle all
@@ -115,6 +115,7 @@ public class SendAndReceiveAMessage {
         +
         "IN1||022254P|4558PD|BLUE CROSS|STREET^OTHER STREET^CITY^ST^00990||(333)333-6666||221K|LENIX|||19980515|19990515|||PATIENT01 TEST D||||||||||||||||||02LL|022LP554";
     Parser p = context.getPipeParser();
+    // Parser p1 = context.getXMLParser();
     Message adt = p.parse(msg);
 
     // Remember, we created our HAPI Context above like so:

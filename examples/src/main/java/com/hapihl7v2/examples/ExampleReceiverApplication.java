@@ -57,7 +57,7 @@ public class ExampleReceiverApplication
 
     String encodedMessage =
         new DefaultHapiContext().getPipeParser().encode(theMessage);
-    System.out.println("Received message:\n" + encodedMessage + "\n\n");
+    System.out.println("Server received message:\n" + encodedMessage);
     // Now generate a simple acknowledgment message and return it
     try {
       return theMessage.generateACK();

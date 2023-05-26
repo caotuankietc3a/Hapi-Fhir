@@ -1,6 +1,36 @@
 # Use postgres/example user/password credentials
 version: "3.1"
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xmx512m -Xms512m
+      xpack.security.enabled: false
+      node.name: es01
+      cluster.name: elasticsearch
+    volumes:
+      - elastic-volume:/usr/share/elasticsearch/data
+    networks:
+      - hapi-fhir-net
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.7.1
+    container_name: kibana
+    ports:
+      - "5601:5601"
+      - "9600:9600"
+    environment:
+      SERVERNAME: kibana
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ES_JAVA_OPTS: -Xmx512m -Xms512m
+    networks:
+      - hapi-fhir-net
+    depends_on:
+      - elasticsearch
   hapi-fhir-postgres:
     image: postgres:14.6
     container_name: hapi-fhir-postgres
@@ -13,8 +43,9 @@ services:
     networks:
       - hapi-fhir-net
     volumes:
-      - hapi-fhir-postgres:/var/lib/postgresql/data
+      - hapi-fhir-postgres-volume:/var/lib/postgresql/data
 volumes:
-  hapi-fhir-postgres:
+  hapi-fhir-postgres-volume: {}
+  elastic-volume: {}
 networks:
-  hapi-fhir-net:
+  hapi-fhir-net: {}

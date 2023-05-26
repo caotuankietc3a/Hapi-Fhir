@@ -12,3 +12,11 @@ spring:
   jpa:
     properties:
       hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
+# logging:
+#   level:
+#     org.springframework: INFO
+#     com.mkyong: DEBUG
+#   pattern:
+#     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+#     file: "%d %p %c{1.} [%t] %m%n"
+#   file: app.log

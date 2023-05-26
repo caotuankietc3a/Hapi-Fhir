@@ -1,0 +1,642 @@
+16:14:42.709 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:14:41+07:00 
+Value: 16.18 kPa
+16:14:42.723 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:14:42+07:00 
+Value: 2 events/hour
+16:14:43.462 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:14:43+07:00 
+Value: 1 events/hour
+16:14:44.462 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:14:44+07:00 
+Value: 12.37 percents
+16:14:45.461 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:14:45+07:00 
+Value: Mask Dislodgment
+16:14:46.461 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:14:46+07:00 
+Value: 105 breaths/minute
+16:14:47.461 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:14:47+07:00 
+Value: 32.96 percents
+16:14:48.462 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:14:48+07:00 
+Value: 92 minutes
+16:14:49.462 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:14:49+07:00 
+Value: 12 minutes
+16:14:50.461 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:14:50+07:00 
+Value: Poor
+16:14:51.461 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:14:51+07:00 
+Value: Significant Leaks
+16:14:52.461 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:14:52+07:00 
+Value: Poor
+16:14:53.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:14:53+07:00 
+Value: Claustrophobia
+16:14:54.461 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:14:54+07:00 
+Value: Significant Leaks
+16:14:55.461 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:14:55+07:00 
+Value: Mask Dislodgment
+16:14:56.462 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:14:56+07:00 
+Value: 78 breaths/minute
+16:14:57.461 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:14:57+07:00 
+Value: 17.35 percents
+16:14:58.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:14:58+07:00 
+Value: 91.92 percents
+16:14:59.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:14:59+07:00 
+Value: 26283 seconds
+16:15:00.460 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:00+07:00 
+Value: Mask Dislodgment
+16:15:01.460 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:01+07:00 
+Value: Mask Dislodgment
+16:15:02.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:02+07:00 
+Value: 53 minutes
+16:15:03.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:03+07:00 
+Value: 85 minutes
+16:15:04.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:15:04+07:00 
+Value: 6.85 percents
+16:15:05.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:05+07:00 
+Value: Poor
+16:15:06.460 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:15:06+07:00 
+Value: 29 events/hour
+16:15:07.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:07+07:00 
+Value: Claustrophobia
+16:15:08.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:08+07:00 
+Value: Mask Dislodgment
+16:15:09.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:09+07:00 
+Value: 99.46 percents
+16:15:10.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:10+07:00 
+Value: Claustrophobia
+16:15:11.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:15:11+07:00 
+Value: 3.09 Pa
+16:15:12.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:12+07:00 
+Value: Conjunctivitis
+16:15:13.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:15:13+07:00 
+Value: 17 events/hour
+16:15:14.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:15:14+07:00 
+Value: 86.88 percents
+16:15:15.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:15+07:00 
+Value: 68 minutes
+16:15:16.460 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:16+07:00 
+Value: Significant Leaks
+16:15:17.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:17+07:00 
+Value: 46.82 percents
+16:15:18.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:15:18+07:00 
+Value: 6.97 cmH2O
+16:15:19.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:19+07:00 
+Value: 94984 seconds
+16:15:20.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:20+07:00 
+Value: Conjunctivitis
+16:15:21.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:15:21+07:00 
+Value: 6.08 cmH2O
+16:15:22.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:22+07:00 
+Value: 84 minutes
+16:15:23.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:15:23+07:00 
+Value: 9.78 percents
+16:15:24.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:24+07:00 
+Value: Fair
+16:15:25.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:25+07:00 
+Value: 121 breaths/minute
+16:15:26.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:26+07:00 
+Value: 15 minutes
+16:15:27.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:27+07:00 
+Value: 96 breaths/minute
+16:15:28.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:28+07:00 
+Value: 56.95 percents
+16:15:29.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:29+07:00 
+Value: Good
+16:15:30.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:30+07:00 
+Value: 18.94 percents
+16:15:31.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:31+07:00 
+Value: Good
+16:15:32.460 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:15:32+07:00 
+Value: 22 events/hour
+16:15:33.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:33+07:00 
+Value: 70 minutes
+16:15:34.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:34+07:00 
+Value: 46 minutes
+16:15:35.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:15:35+07:00 
+Value: 14 minutes
+16:15:36.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:36+07:00 
+Value: 129 breaths/minute
+16:15:37.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:37+07:00 
+Value: Good
+16:15:38.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:15:38+07:00 
+Value: 27.34 percents
+16:15:39.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:39+07:00 
+Value: Good
+16:15:40.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:40+07:00 
+Value: Claustrophobia
+16:15:41.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:41+07:00 
+Value: 73.47 percents
+16:15:42.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:42+07:00 
+Value: 41.17 percents
+16:15:43.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:15:43+07:00 
+Value: 2.22 mmHg
+16:15:44.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:44+07:00 
+Value: 0 breaths/minute
+16:15:45.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:45+07:00 
+Value: 38 breaths/minute
+16:15:46.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:46+07:00 
+Value: Fair
+16:15:47.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:15:47+07:00 
+Value: 7.58 kPa
+16:15:48.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:48+07:00 
+Value: 6.67 percents
+16:15:49.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:49+07:00 
+Value: Conjunctivitis
+16:15:50.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:50+07:00 
+Value: Dry throat
+16:15:51.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:51+07:00 
+Value: 57.19 percents
+16:15:52.460 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:15:52+07:00 
+Value: Claustrophobia
+16:15:53.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:15:53+07:00 
+Value: 19 events/hour
+16:15:54.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:15:54+07:00 
+Value: 85.41 percents
+16:15:55.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:55+07:00 
+Value: Significant Leaks
+16:15:56.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:15:56+07:00 
+Value: Snoring
+16:15:57.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:15:57+07:00 
+Value: 103 breaths/minute
+16:15:58.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:15:58+07:00 
+Value: 10.62 percents
+16:15:59.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:15:59+07:00 
+Value: Fair
+16:16:00.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:00+07:00 
+Value: Conjunctivitis
+16:16:01.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:01+07:00 
+Value: 14.34 percents
+16:16:02.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:02+07:00 
+Value: 51.1 percents
+16:16:03.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:16:03+07:00 
+Value: 116 breaths/minute
+16:16:04.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:04+07:00 
+Value: 4.12 percents
+16:16:05.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:05+07:00 
+Value: 8.89 mmHg
+16:16:06.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:06+07:00 
+Value: 82679 seconds
+16:16:07.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:07+07:00 
+Value: 46.15 percents
+16:16:08.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:08+07:00 
+Value: 6 events/hour
+16:16:09.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:16:09+07:00 
+Value: 137 breaths/minute
+16:16:10.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:10+07:00 
+Value: 2 minutes
+16:16:11.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:11+07:00 
+Value: Dry throat
+16:16:12.463 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:12+07:00 
+Value: 5.93 cmH2O
+16:16:13.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:13+07:00 
+Value: Skin irritation
+16:16:14.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:14+07:00 
+Value: 5 minutes
+16:16:15.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:15+07:00 
+Value: 17.09 Pa
+16:16:16.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:16+07:00 
+Value: 6.92 mmHg
+16:16:17.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:17+07:00 
+Value: 99513 seconds
+16:16:18.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:16:18+07:00 
+Value: Fair
+16:16:19.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:19+07:00 
+Value: 39.45 percents
+16:16:20.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:20+07:00 
+Value: 41.26 percents
+16:16:21.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:21+07:00 
+Value: 9.94 Pa
+16:16:22.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:22+07:00 
+Value: Conjunctivitis
+16:16:23.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:23+07:00 
+Value: 75814 seconds
+16:16:24.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:24+07:00 
+Value: 1 events/hour
+16:16:25.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:25+07:00 
+Value: 93381 seconds
+16:16:26.460 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:16:26+07:00 
+Value: Mask Dislodgment
+16:16:27.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:27+07:00 
+Value: 19.46 percents
+16:16:28.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:16:28+07:00 
+Value: Snoring
+16:16:29.460 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:16:29+07:00 
+Value: 28 breaths/minute
+16:16:30.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:30+07:00 
+Value: 62.48 percents
+16:16:31.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:31+07:00 
+Value: 12.06 Pa
+16:16:32.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:16:32+07:00 
+Value: Poor
+16:16:33.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:33+07:00 
+Value: 15.53 Pa
+16:16:34.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:34+07:00 
+Value: 14.55 cmH2O
+16:16:35.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:35+07:00 
+Value: Mask leaks
+16:16:36.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:36+07:00 
+Value: 73.22 percents
+16:16:37.460 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:37+07:00 
+Value: 28 events/hour
+16:16:38.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:16:38+07:00 
+Value: 15.27 mmHg
+16:16:39.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:16:39+07:00 
+Value: 142 breaths/minute
+16:16:40.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:16:40+07:00 
+Value: Poor
+16:16:41.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:41+07:00 
+Value: 71.41 percents
+16:16:42.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:42+07:00 
+Value: 29 events/hour
+16:16:43.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:43+07:00 
+Value: 24.98 percents
+16:16:44.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:16:44+07:00 
+Value: 88.18 percents
+16:16:45.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:45+07:00 
+Value: 8 events/hour
+16:16:46.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:46+07:00 
+Value: 88 minutes
+16:16:47.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:47+07:00 
+Value: 27.78 percents
+16:16:48.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:16:48+07:00 
+Value: Fair
+16:16:49.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:49+07:00 
+Value: 6 events/hour
+16:16:50.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:50+07:00 
+Value: 8 minutes
+16:16:51.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:51+07:00 
+Value: 33.96 percents
+16:16:52.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:52+07:00 
+Value: 26.42 percents
+16:16:53.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:53+07:00 
+Value: Claustrophobia
+16:16:54.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:54+07:00 
+Value: 74812 seconds
+16:16:55.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:16:55+07:00 
+Value: Mask leaks
+16:16:56.460 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:16:56+07:00 
+Value: 89.51 percents
+16:16:57.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:16:57+07:00 
+Value: Mask Dislodgment
+16:16:58.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:16:58+07:00 
+Value: 7 events/hour
+16:16:59.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:16:59+07:00 
+Value: 1 minutes
+16:17:00.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:00+07:00 
+Value: 28 events/hour
+16:17:01.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:01+07:00 
+Value: 46.5 percents
+16:17:02.460 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:02+07:00 
+Value: 33.12 percents
+16:17:03.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:03+07:00 
+Value: Good
+16:17:04.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:17:04+07:00 
+Value: Mask leaks
+16:17:05.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:05+07:00 
+Value: 1 events/hour
+16:17:06.458 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:06+07:00 
+Value: 16 events/hour
+16:17:07.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:07+07:00 
+Value: 58.37 percents
+16:17:08.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:08+07:00 
+Value: 92.63 percents
+16:17:09.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:17:09+07:00 
+Value: Significant Leaks
+16:17:10.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:10+07:00 
+Value: 44.61 percents
+16:17:11.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:11+07:00 
+Value: 15 events/hour
+16:17:12.458 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:12+07:00 
+Value: 31.52 percents
+16:17:13.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:13+07:00 
+Value: 46.82 percents
+16:17:14.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:14+07:00 
+Value: Poor
+16:17:15.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:15+07:00 
+Value: 0.09 mmHg
+16:17:16.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:16+07:00 
+Value: 404 seconds
+16:17:17.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:17+07:00 
+Value: 15.22 Pa
+16:17:18.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:18+07:00 
+Value: 17.59 kPa
+16:17:19.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:19+07:00 
+Value: 22407 seconds
+16:17:20.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:20+07:00 
+Value: 38.94 percents
+16:17:21.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:17:21+07:00 
+Value: 143 breaths/minute
+16:17:22.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:17:22+07:00 
+Value: 87 breaths/minute
+16:17:23.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:23+07:00 
+Value: 26.53 percents
+16:17:24.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:24+07:00 
+Value: 76 minutes
+16:17:25.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:17:25+07:00 
+Value: 95 breaths/minute
+16:17:26.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:17:26+07:00 
+Value: Skin irritation
+16:17:27.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:27+07:00 
+Value: Fair
+16:17:28.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:28+07:00 
+Value: 39.94 percents
+16:17:29.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:29+07:00 
+Value: 65.13 percents
+16:17:30.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:17:30+07:00 
+Value: Dry throat
+16:17:31.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:31+07:00 
+Value: 59047 seconds
+16:17:32.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:32+07:00 
+Value: 18 events/hour
+16:17:33.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:33+07:00 
+Value: 10.59 Pa
+16:17:34.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:34+07:00 
+Value: Fair
+16:17:35.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:35+07:00 
+Value: 63 minutes
+16:17:36.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:36+07:00 
+Value: Good
+16:17:37.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:37+07:00 
+Value: 26 events/hour
+16:17:38.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:38+07:00 
+Value: 47.41 percents
+16:17:39.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:17:39+07:00 
+Value: Mask Dislodgment
+16:17:40.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:17:40+07:00 
+Value: Mask Dislodgment
+16:17:41.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:17:41+07:00 
+Value: 12.89 percents
+16:17:42.458 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:42+07:00 
+Value: 7 events/hour
+16:17:43.461 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:43+07:00 
+Value: 93.89 percents
+16:17:44.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:17:44+07:00 
+Value: Significant Leaks
+16:17:45.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:45+07:00 
+Value: 22 events/hour
+16:17:46.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:46+07:00 
+Value: 17.15 kPa
+16:17:47.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:47+07:00 
+Value: 29 events/hour
+16:17:48.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:48+07:00 
+Value: 36.44 percents
+16:17:49.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:17:49+07:00 
+Value: Poor
+16:17:50.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:50+07:00 
+Value: 99.39 percents
+16:17:51.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:51+07:00 
+Value: 21 events/hour
+16:17:52.460 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:17:52+07:00 
+Value: 80766 seconds
+16:17:53.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:53+07:00 
+Value: 30.57 percents
+16:17:54.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:54+07:00 
+Value: 15.88 percents
+16:17:55.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:17:55+07:00 
+Value: 56.36 percents
+16:17:56.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:56+07:00 
+Value: 13 events/hour
+16:17:57.459 INFO  c.h.h.ObservationResourceProvider 
+Compliance Data at 2023-05-26 16:17:57+07:00 
+Value: Skin irritation
+16:17:58.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:17:58+07:00 
+Value: 16.01 Pa
+16:17:59.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:17:59+07:00 
+Value: 28 events/hour
+16:18:00.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:18:00+07:00 
+Value: 0.48 Pa
+16:18:01.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Usage Duration at 2023-05-26 16:18:01+07:00 
+Value: 20423 seconds
+16:18:02.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:18:02+07:00 
+Value: 1 events/hour
+16:18:03.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:18:03+07:00 
+Value: 73.56 percents
+16:18:04.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:18:04+07:00 
+Value: 15 events/hour
+16:18:05.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:18:05+07:00 
+Value: 35 breaths/minute
+16:18:06.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Pressure Leakage at 2023-05-26 16:18:06+07:00 
+Value: 35.25 percents
+16:18:07.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:18:07+07:00 
+Value: Poor
+16:18:08.459 INFO  c.h.h.ObservationResourceProvider 
+CPAP Pressure Level at 2023-05-26 16:18:08+07:00 
+Value: 17.88 cmH2O
+16:18:09.459 INFO  c.h.h.ObservationResourceProvider 
+Event Detection at 2023-05-26 16:18:09+07:00 
+Value: Mask Dislodgment
+16:18:10.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:18:10+07:00 
+Value: 25 events/hour
+16:18:11.459 INFO  c.h.h.ObservationResourceProvider 
+Mask Fit Assessment at 2023-05-26 16:18:11+07:00 
+Value: Good
+16:18:12.459 INFO  c.h.h.ObservationResourceProvider 
+Respiratory Rate at 2023-05-26 16:18:12+07:00 
+Value: 45 breaths/minute
+16:18:13.459 INFO  c.h.h.ObservationResourceProvider 
+Oxygen Saturation at 2023-05-26 16:18:13+07:00 
+Value: 41.41 percents
+16:18:14.459 INFO  c.h.h.ObservationResourceProvider 
+Apnea-Hypopnea Index (AHI) at 2023-05-26 16:18:14+07:00 
+Value: 22 events/hour
