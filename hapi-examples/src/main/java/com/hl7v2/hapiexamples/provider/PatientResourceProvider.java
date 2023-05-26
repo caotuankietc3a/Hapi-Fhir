@@ -1,6 +1,5 @@
-package com.hl7v2.hapiexamples;
+package com.hl7v2.hapiexamples.provider;
 
-import ca.uhn.fhir.i18n.Msg;
 import ca.uhn.fhir.rest.annotation.Create;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
@@ -8,7 +7,6 @@ import ca.uhn.fhir.rest.annotation.ResourceParam;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.exceptions.ResourceNotFoundException;
-import ca.uhn.fhir.rest.server.exceptions.UnprocessableEntityException;
 import java.util.HashMap;
 import java.util.Map;
 import org.hl7.fhir.instance.model.api.IBaseResource;

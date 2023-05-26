@@ -1,4 +1,4 @@
-package com.hl7v2.hapiexamples;
+package com.hl7v2.hapiexamples.provider;
 
 import ca.uhn.fhir.rest.annotation.Create;
 import ca.uhn.fhir.rest.annotation.ResourceParam;

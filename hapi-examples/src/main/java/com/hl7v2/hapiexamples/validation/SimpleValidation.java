@@ -1,4 +1,4 @@
-package com.hl7v2.hapiexamples;
+package com.hl7v2.hapiexamples.validation;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.validation.FhirValidator;
