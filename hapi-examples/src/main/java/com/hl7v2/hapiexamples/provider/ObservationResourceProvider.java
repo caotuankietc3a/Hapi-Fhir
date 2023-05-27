@@ -4,6 +4,8 @@ import ca.uhn.fhir.rest.annotation.Create;
 import ca.uhn.fhir.rest.annotation.ResourceParam;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import com.hl7v2.hapiexamples.dao.ObservationDAO;
+import com.hl7v2.hapiexamples.model.CustomObservation;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +15,12 @@ import org.hl7.fhir.r4.model.DateTimeType;
 import org.hl7.fhir.r4.model.IdType;
 import org.hl7.fhir.r4.model.Observation;
 import org.hl7.fhir.r4.model.OperationOutcome;
-import org.hl7.fhir.r4.model.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+// import org.springframework.stereotype.Component;
 
+// @Component
 public class ObservationResourceProvider implements IResourceProvider {
 
   public static final String[] displayValues = {
@@ -35,11 +39,13 @@ public class ObservationResourceProvider implements IResourceProvider {
 
   @Override
   public Class<? extends IBaseResource> getResourceType() {
-    return Patient.class;
+    return Observation.class;
   }
 
   @Create
   public MethodOutcome create(@ResourceParam final Observation observation) {
+
+    Integer id = observations.size() + 1;
 
     final List<Coding> codingList = observation.getCode().getCoding();
     DateTimeType effectiveDateTime = observation.getEffectiveDateTimeType();
@@ -48,6 +54,7 @@ public class ObservationResourceProvider implements IResourceProvider {
 
     for (Coding coding : codingList) {
       final String display = coding.getDisplay();
+      boolean found = false;
       if (display.equals(displayValues[0]) ||
           display.equals(displayValues[1]) ||
           display.equals(displayValues[2]) ||
@@ -57,15 +64,34 @@ public class ObservationResourceProvider implements IResourceProvider {
         logger.info("{} at {} Value: {} {}", display, formattedDateTime,
                     observation.getValueQuantity().getValue(),
                     observation.getValueQuantity().getUnit());
+        found = true;
+
       } else {
         logger.info("{} at {} Value: {}", display, formattedDateTime,
                     observation.getValue().toString());
+        found = true;
+      }
+      if (found) {
+        try (ClassPathXmlApplicationContext context =
+                 new ClassPathXmlApplicationContext("spring.xml")) {
+          ObservationDAO observationDAO = context.getBean(ObservationDAO.class);
+
+          CustomObservation customObservation = new CustomObservation(
+              id.longValue(), coding, effectiveDateTime,
+              observation.getStatus(), observation.getSubject(),
+              observation.getDevice(),
+              observation.getValueQuantity().toString(),
+              observation.getValue());
+
+          observationDAO.save(customObservation);
+          break;
+        } catch (Exception e) {
+          System.err.println(e.getMessage());
+        };
       }
     }
 
-    Integer id = observations.size() + 1;
-
-    observations.put(observations.size() + 1, observation);
+    observations.put(id, observation);
 
     MethodOutcome retVal = new MethodOutcome();
     retVal.setId(new IdType("Observation", id.toString(), "1"));

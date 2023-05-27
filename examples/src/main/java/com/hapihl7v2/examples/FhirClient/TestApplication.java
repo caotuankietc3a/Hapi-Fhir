@@ -27,7 +27,7 @@ public class TestApplication {
   static public final IGenericClient fhirClient =
       FhirClientConfiguration.fhirClient(ctx);
 
-  @Scheduled(fixedRate = 1000)
+  @Scheduled(fixedRate = 5000)
   public static void run() throws Exception {
 
     // Runnable runnable = () -> testApp();

@@ -7,7 +7,7 @@ spring:
     url: "jdbc:postgresql://localhost:5432/hapi-fhir?currentSchema=hapi-fhir&user=postgres&password=admin"
     username: "postgres"
     password: "amdin"
-    # driver.class-name: org.postgresql.Driver
+    driver.class-name: org.postgresql.Driver
     # max-active: 15
     # hikari:
     #   connectionTimeout: 20000

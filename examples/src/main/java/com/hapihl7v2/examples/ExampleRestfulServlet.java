@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 public class ExampleRestfulServlet extends RestfulServer {
 
   private static final long serialVersionUID = 1L;
-
   @Override
   protected void initialize() throws ServletException {
     List<IResourceProvider> resourceProviders =
