@@ -2,10 +2,12 @@ package com.hl7v2.hapiexamples.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.DateTimeType;
 import org.hl7.fhir.r4.model.Observation.ObservationStatus;
@@ -15,11 +17,14 @@ import org.hl7.fhir.r4.model.Type;
 
 @Entity(name = "Observation")
 @Table(name = "Observation")
+@Data
+@NoArgsConstructor
 public class CustomObservation {
 
   public CustomObservation(Long id, Coding code, DateTimeType effectiveDateTime,
                            ObservationStatus status, Reference subject,
-                           Reference device, String valueQuantity, Type value) {
+                           Reference device, Quantity valueQuantity,
+                           Type value) {
     this.id = id;
     this.code = code;
     this.effectiveDateTime = effectiveDateTime;
@@ -43,53 +48,68 @@ public class CustomObservation {
 
   @Column(name = "device", nullable = false) private Reference device;
 
-  @Column(name = "valueQuantity", nullable = true) private String valueQuantity;
+  @Column(name = "valueQuantity", nullable = true)
+  private Quantity valueQuantity;
 
   @Column(name = "value", nullable = true) private Type value;
 
-  public Coding getCode() { return code; }
+  @Override
+  public String toString() {
+    String formattedDateTime = effectiveDateTime.getValueAsString();
+    formattedDateTime = formattedDateTime.replace("T", " ").replace("Z", "");
 
-  public void setCode(Coding code) { this.code = code; }
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
 
-  public DateTimeType getEffectiveDateTime() { return effectiveDateTime; }
+    sb.append("\"resourceType\": \"Observation\",");
 
-  public void setEffectiveDateTime(DateTimeType effectiveDateTime) {
-    this.effectiveDateTime = effectiveDateTime;
+    sb.append("\"code\": ")
+        .append("{")
+        .append("\"system\": \"")
+        .append(code.getSystem())
+        .append("\",")
+        .append("\"code\": \"")
+        .append(code.getCode())
+        .append("\",")
+        .append("\"display\": \"")
+        .append(code.getDisplay())
+        .append("\"")
+        .append("},");
+
+    if (valueQuantity != null) {
+      sb.append("\"valueQuantity\": ")
+          .append("{")
+          .append("\"value\": ")
+          .append(valueQuantity.getValue().longValue())
+          .append(",")
+          .append("\"unit\": \"")
+          .append(valueQuantity.getUnit())
+          .append("\"},");
+    }
+
+    if (value != null) {
+      sb.append("\"valueString\": \"").append(value.toString()).append("\",");
+    }
+
+    sb.append("\"effectiveDateTime\": \"")
+        .append(formattedDateTime)
+        .append("\",");
+
+    sb.append("\"status\": \"").append(status.toCode()).append("\",");
+
+    sb.append("\"subject\": ")
+        .append("{")
+        .append("\"reference\": \"")
+        .append(subject.getReference().toString())
+        .append("\"},");
+
+    sb.append("\"device\": ")
+        .append("{")
+        .append("\"reference\": \"")
+        .append(device.getReference().toString())
+        .append("\"}");
+    sb.append("}");
+
+    return sb.toString();
   }
-
-  public ObservationStatus getStatus() { return status; }
-
-  public void setStatus(ObservationStatus status) { this.status = status; }
-
-  public Reference getSubject() { return subject; }
-
-  public void setSubject(Reference subject) { this.subject = subject; }
-
-  public Reference getDevice() { return device; }
-
-  public void setDevice(Reference device) { this.device = device; }
-
-  public String getValueQuantity() { return valueQuantity; }
-
-  public void setValueQuantity(String valueQuantity) {
-    this.valueQuantity = valueQuantity;
-  }
-
-  public Type getValue() { return value; }
-
-  public void setValue(Type value) { this.value = value; }
-
-  public Long getId() { return id; }
-
-  public void setId(Long id) { this.id = id; }
-
-  // @Override
-  // public String getId() {
-  //   return super.getId();
-  // }
-
-  // @Override
-  // public Resource setId(String value) {
-  //   return super.setId(value);
-  // }
 }

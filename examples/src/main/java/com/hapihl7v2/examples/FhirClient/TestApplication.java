@@ -3,12 +3,14 @@ package com.hapihl7v2.examples.FhirClient;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
+import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IIdType;
 import org.hl7.fhir.r4.model.Device;
+import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.Observation;
 import org.hl7.fhir.r4.model.Patient;
 import org.springframework.context.annotation.Configuration;
@@ -27,17 +29,55 @@ public class TestApplication {
   static public final IGenericClient fhirClient =
       FhirClientConfiguration.fhirClient(ctx);
 
-  @Scheduled(fixedRate = 5000)
+  @Scheduled(fixedRate = 500)
   public static void run() throws Exception {
 
     // Runnable runnable = () -> testApp();
     // while (true) {
     // scheduler.schedule(runnable, 1, TimeUnit.SECONDS);
-    testApp();
+    // testApp();
+
+    MethodOutcome outcome = fhirClient.create()
+                                .resource(testApp1())
+                                .prettyPrint()
+                                .encodedJson()
+                                .execute();
+
+    IIdType id = outcome.getId();
+    System.out.println("Got ID: " + id.getValue());
 
     // Thread.sleep(2500);
     // }
     // FhirContext ctx = FhirContext.forR4();
+  }
+  public static Device testApp1() {
+    int random = (int)(Math.random() * FhirDeviceService.DEVICES.length);
+    Device device = FhirDeviceService.createDevice();
+    device.setId(generateRandomString(4));
+    Identifier identifier = new Identifier();
+    identifier.setSystem("http://example.org/devices");
+    identifier.setValue(FhirDeviceService.DEVICES[random]);
+    device.addIdentifier(identifier);
+
+    String json =
+        ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(device);
+    System.out.println(json);
+    return device;
+  }
+
+  public static String generateRandomString(int length) {
+    String characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    StringBuilder sb = new StringBuilder(length);
+    Random random = new Random();
+
+    for (int i = 0; i < length; i++) {
+      int index = random.nextInt(characters.length());
+      char randomChar = characters.charAt(index);
+      sb.append(randomChar);
+    }
+
+    return sb.toString();
   }
 
   public static void testApp() {
@@ -90,14 +130,14 @@ public class TestApplication {
     // Device device = FhirService.createDevice();
     printFHIRResource(ctx, observation);
 
-    MethodOutcome outcome = fhirClient.create()
-                                .resource(observation)
-                                .prettyPrint()
-                                .encodedJson()
-                                .execute();
+    // MethodOutcome outcome = fhirClient.create()
+    //                             .resource(observation)
+    //                             .prettyPrint()
+    //                             .encodedJson()
+    //                             .execute();
 
-    IIdType id = outcome.getId();
-    System.out.println("Got ID: " + id.getValue());
+    // IIdType id = outcome.getId();
+    // System.out.println("Got ID: " + id.getValue());
     // printFHIRResource(ctx, patient);
     // printFHIRResource(ctx, device);
   }

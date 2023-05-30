@@ -40,6 +40,8 @@ public class FhirService {
   // @Autowired private IGenericClient fhirClient;
   private static Observation createObservation(String code,
                                                String displayType) {
+    int randomDeviceId = (int)(Math.random() * 1000);
+    int randomPatientId = (int)(Math.random() * 100);
 
     Observation observation = new Observation();
     observation.getCode()
@@ -50,8 +52,8 @@ public class FhirService {
 
     observation.setEffective(new DateTimeType(new Date()));
     observation.setStatus(Observation.ObservationStatus.FINAL);
-    observation.getSubject().setReference("Patient/example-patient");
-    observation.getDevice().setReference("Device/example-device");
+    observation.getSubject().setReference("Patient/" + randomPatientId);
+    observation.getDevice().setReference("Device/" + randomDeviceId);
 
     // return fhirClient.create().resource(observation).execute().getId();
     return observation;
