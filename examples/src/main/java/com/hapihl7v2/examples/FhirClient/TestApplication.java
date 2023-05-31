@@ -29,7 +29,7 @@ public class TestApplication {
   static public final IGenericClient fhirClient =
       FhirClientConfiguration.fhirClient(ctx);
 
-  @Scheduled(fixedRate = 500)
+  @Scheduled(fixedRate = 100)
   public static void run() throws Exception {
 
     // Runnable runnable = () -> testApp();
@@ -53,11 +53,15 @@ public class TestApplication {
   public static Device testApp1() {
     int random = (int)(Math.random() * FhirDeviceService.DEVICES.length);
     Device device = FhirDeviceService.createDevice();
-    device.setId(generateRandomString(4));
-    Identifier identifier = new Identifier();
-    identifier.setSystem("http://example.org/devices");
-    identifier.setValue(FhirDeviceService.DEVICES[random]);
-    device.addIdentifier(identifier);
+
+    device.setIdBase(generateRandomString(6));
+    device.setId(generateRandomString(6));
+    device.setDistinctIdentifier(FhirDeviceService.DEVICES[random] + "-" +
+                                 generateRandomString(6));
+    // Identifier identifier = new Identifier();
+    // identifier.setSystem("http://example.org/devices");
+    // identifier.setValue(FhirDeviceService.DEVICES[random]);
+    // device.addIdentifier(identifier);
 
     String json =
         ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(device);

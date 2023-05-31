@@ -26,6 +26,7 @@ public class FhirDeviceService {
 
   private static final Map<String, Map<Integer, String>> STATUS =
       new HashMap<>();
+
   // private static final Map<String, List<Integer>> STATUS = new HashMap<>();
   static {
     MEASURES.put("Ppeak", "cmH2O");
@@ -47,31 +48,29 @@ public class FhirDeviceService {
     map.put(2, "Maintenance");
     map.put(3, "Ventilation");
     STATUS.put("Ventilator State", map);
-    map.clear();
 
-    map.put(0, "Adult");
-    map.put(1, "Child");
-    map.put(2, "Infant");
-    STATUS.put("Patient Type", map);
-    map.clear();
+    Map<Integer, String> map1 = new HashMap<>();
+    map1.put(0, "Adult");
+    map1.put(1, "Child");
+    map1.put(2, "Infant");
+    STATUS.put("Patient Type", map1);
 
+    Map<Integer, String> map2 = new HashMap<>();
     for (int i = 0; i < DEVICES.length; i++) {
-      map.put(i, DEVICES[i]);
+      map2.put(i, DEVICES[i]);
     }
-    STATUS.put("Ventilator Mode", map);
-    map.clear();
+    STATUS.put("Ventilator Mode", map2);
 
-    map.put(0, "OFF");
-    map.put(1, "ON");
-    STATUS.put("NIV", map);
-    STATUS.put("100% O2", map);
-    STATUS.put("Expi. Flow Sensor", map);
-    STATUS.put("CO2 Sensor", map);
-    STATUS.put("Expi. Flow Sensor", map);
-    STATUS.put("Expi Pause", map);
-    STATUS.put("Inspi Pause", map);
-
-    map.clear();
+    Map<Integer, String> map3 = new HashMap<>();
+    map3.put(0, "OFF");
+    map3.put(1, "ON");
+    STATUS.put("NIV", map3);
+    STATUS.put("100% O2", map3);
+    STATUS.put("Expi. Flow Sensor", map3);
+    STATUS.put("CO2 Sensor", map3);
+    STATUS.put("Expi. Flow Sensor", map3);
+    STATUS.put("Expi Pause", map3);
+    STATUS.put("Inspi Pause", map3);
 
     VENTILATIONSETTINGS.put("VT", "mL");
     VENTILATIONSETTINGS.put("RR", "c/min");
@@ -142,7 +141,7 @@ public class FhirDeviceService {
   public static Device createDevice() {
 
     // Create FHIR Context
-    FhirContext fhirContext = FhirContext.forR4();
+    // FhirContext fhirContext = FhirContext.forR4();
 
     // Create Device Resource
     Device device = new Device();
@@ -203,11 +202,12 @@ public class FhirDeviceService {
 
     for (Map.Entry<String, Map<Integer, String>> entry : STATUS.entrySet()) {
       int randomUnit = (int)(Math.random() * entry.getValue().size());
+      System.out.println("size" + entry.getValue().size());
 
-      quantities.add(new Quantity()
-                         .setValue(randomUnit)
-                         .setUnit(entry.getValue().get(randomUnit))
-                         .setCode(entry.getKey()));
+      statusQuantities.add(new Quantity()
+                               .setValue(randomUnit)
+                               .setUnit(entry.getValue().get(randomUnit))
+                               .setCode(entry.getKey()));
     }
     // Set Device Property Codes
     device.addProperty()

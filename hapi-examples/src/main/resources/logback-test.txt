@@ -44,3 +44,42 @@
   </root>
 </configuration>
 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <File>./src/main/resources/logback-demo-json.log</File>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+  </appender>
+
+  <!--
+  https://stackoverflow.com/questions/45615040/how-do-you-ingest-spring-boot-logs-directly-into-elastic -->
+  <!-- <appender name="ES" class="ch.qos.logback.ext.loggly.LogglyAppender"> -->
+  <!--   <endpointUrl>http://localhost:9200/tests/test?pipeline=logback</endpointUrl> -->
+  <!--   <pattern>%m</pattern> -->
+  <!-- </appender> -->
+
+
+  <!-- <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"> -->
+  <!--   <encoder> -->
+  <!--     <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} %msg%n</pattern> -->
+  <!--   </encoder> -->
+  <!-- </appender> -->
+  <!-- <appender name="FILE" class="ch.qos.logback.core.FileAppender"> -->
+  <!--   <File>./src/main/resources/logback-demo.log</File> -->
+  <!--   <encoder> -->
+  <!--     <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} %msg%n</pattern> -->
+  <!--   </encoder> -->
+  <!-- </appender> -->
+  <root level="INFO">
+    <appender-ref ref="FILE" />
+    <!-- <appender-ref ref="CONSOLE" /> -->
+    <appender-ref ref="STDOUT" />
+    <!-- <appender-ref ref="ES" /> -->
+  </root>
+</configuration>
