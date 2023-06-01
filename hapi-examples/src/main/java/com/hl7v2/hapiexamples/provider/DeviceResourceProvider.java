@@ -44,11 +44,16 @@ public class DeviceResourceProvider implements IResourceProvider {
 
     fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(
         device);
-    Map<String, Map<String, Map<String, Object>>> logKeyValue = new HashMap<>();
-    Map<String, Object> logKeyValue2 = new HashMap<>();
 
     for (DevicePropertyComponent prop : device.getProperty()) {
       String type = prop.getType().getCoding().get(0).getCode();
+
+      Map<String, Object> logKeyValue2 = new HashMap<>();
+      String[] identifier = device.getDistinctIdentifier().split("-");
+      logKeyValue2.put("device_name", identifier[0]);
+      logKeyValue2.put("device_id", identifier[1]);
+      logKeyValue2.put("type", type);
+
       Map<String, Map<String, Object>> mapOut = new HashMap<>();
       for (Quantity var : prop.getValueQuantity()) {
         Map<String, Object> mapIn = new HashMap<>();
@@ -56,22 +61,13 @@ public class DeviceResourceProvider implements IResourceProvider {
         String code = var.getCode();
         String unit = var.getUnit();
         mapIn.put("value", value);
-        // mapIn.put("name", code);
         mapIn.put("unit", unit);
         mapOut.put(code, mapIn);
       }
-      logKeyValue.put(type, mapOut);
+
+      logger.info("LOG " + type.toUpperCase() + " DEVICE",
+                  entries(logKeyValue2), entries(mapOut));
     }
-
-    System.out.println(device.getId());
-    System.out.println(device.getIdBase());
-    System.out.println(device.getDistinctIdentifier());
-
-    String[] identifier = device.getDistinctIdentifier().split("-");
-    logKeyValue2.put("device_name", identifier[0]);
-    logKeyValue2.put("device_id", identifier[1]);
-
-    logger.info("Log for Device", entries(logKeyValue2), entries(logKeyValue));
 
     devices.put(id, device);
 
