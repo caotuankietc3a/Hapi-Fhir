@@ -1,20 +1,75 @@
 # Use postgres/example user/password credentials
 version: "3.1"
 services:
-  hapi-fhir-postgres:
-    image: postgres:14.6
-    container_name: hapi-fhir-postgres
-    restart: always
-    ports:
-      - 5432:5432
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    container_name: elasticsearch
     environment:
-      POSTGRES_DB: hapi-fhir
-      POSTGRES_PASSWORD: admin
-    networks:
-      - hapi-fhir-net
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xmx512m -Xms512m
+      xpack.security.enabled: false
+      http.host: 0.0.0.0
+      node.name: es01
+      cluster.name: elasticsearch
     volumes:
-      - hapi-fhir-postgres:/var/lib/postgresql/data
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - elasticsearch
+    expose:
+      - 9200
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.7.1
+    container_name: kibana
+    environment:
+      SERVERNAME: kibana
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ES_JAVA_OPTS: -Xmx512m -Xms512m
+    ports:
+      - "5601:5601"
+    networks:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+    links: # Links kibana service to the elasticsearch container
+      - elasticsearch
+  fluentd:
+    build: ./fluentd
+    # image: fluent/fluentd:edge-debian
+    container_name: fluentd
+    volumes:
+      - ./fluentd/conf/:/fluentd/etc
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    networks:
+      # - microservice-network
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+    links: # Sends incoming logs to the elasticsearch container.
+      - elasticsearch
+      # hapi-fhir-postgres:
+      #   image: postgres:14.6
+      #   container_name: hapi-fhir-postgres
+      #   restart: always
+      #   ports:
+      #     - 5432:5432
+      #   environment:
+      #     POSTGRES_DB: hapi-fhir
+      #     POSTGRES_PASSWORD: admin
+      #   networks:
+      #     - hapi-fhir-net
+      #   volumes:
+      #     - hapi-fhir-postgres:/var/lib/postgresql/data
 volumes:
-  hapi-fhir-postgres:
+  # hapi-fhir-postgres:
+  #   driver: local
+  esdata:
+    driver: local
 networks:
-  hapi-fhir-net:
+  # hapi-fhir-net:
+  elasticsearch:
+    driver: bridge
