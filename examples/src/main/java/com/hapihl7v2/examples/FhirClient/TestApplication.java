@@ -3,6 +3,7 @@ package com.hapihl7v2.examples.FhirClient;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
+import ca.uhn.fhir.rest.client.interceptor.LoggingInterceptor;
 import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -29,19 +30,29 @@ public class TestApplication {
   static public final IGenericClient fhirClient =
       FhirClientConfiguration.fhirClient(ctx);
 
-  @Scheduled(fixedRate = 100)
+  @Scheduled(fixedRate = 10000)
   public static void run() throws Exception {
 
     // Runnable runnable = () -> testApp();
     // while (true) {
     // scheduler.schedule(runnable, 1, TimeUnit.SECONDS);
     // testApp();
+    // Create a logging interceptor
+    LoggingInterceptor loggingInterceptor = new LoggingInterceptor(true);
+    // loggingInterceptor.setLogRequestSummary(true);
+    // loggingInterceptor.setLogRequestBody(true);
 
-    MethodOutcome outcome = fhirClient.create()
-                                .resource(testApp1())
-                                .prettyPrint()
-                                .encodedJson()
-                                .execute();
+    // Optionally you may configure the interceptor (by default only
+    // summary info is logged)
+    fhirClient.registerInterceptor(loggingInterceptor);
+
+    MethodOutcome outcome =
+        fhirClient.create()
+            .resource(testApp1())
+            // .conditionalByUrl("Device?isManuallyCreated=0")
+            .prettyPrint()
+            .encodedJson()
+            .execute();
 
     IIdType id = outcome.getId();
     System.out.println("Got ID: " + id.getValue());

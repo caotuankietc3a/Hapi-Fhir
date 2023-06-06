@@ -15,10 +15,6 @@ public class FhirDeviceService {
       new String[] {"(A)VCV", "(A)PCV",     "CPAP",   "PSV",  "SIMV",
                     "PSIMV",  "Duo-Levels", "Ps-PRO", "PRVC", "Oxygen therapy"};
 
-  // private static final String[] MEASURES = new String[] {
-  //     "Ppeak", "VTe", "RR",  "MVe",       "FiO2",    "Pmean",  "Pplat",
-  //     "PEEP",  "VTi", "MVi", "Leak Flow", "Ti/Ttot", "FinCO2", "etCO@"};
-
   private static final Map<String, String> MEASURES = new HashMap<>();
   private static final Map<String, String> VENTILATIONSETTINGS =
       new HashMap<>();
@@ -27,7 +23,6 @@ public class FhirDeviceService {
   private static final Map<String, Map<Integer, String>> STATUS =
       new HashMap<>();
 
-  // private static final Map<String, List<Integer>> STATUS = new HashMap<>();
   static {
     MEASURES.put("Ppeak", "cmH2O");
     MEASURES.put("VTe", "mL");
@@ -39,7 +34,7 @@ public class FhirDeviceService {
     MEASURES.put("PEEP", "cmH2O");
     MEASURES.put("VTi", "mL");
     MEASURES.put("MVi", "L/min");
-    MEASURES.put("Ti/Ttot", "%");
+    MEASURES.put("TI/Ttot", "%");
     MEASURES.put("FinCO2", "%");
     MEASURES.put("etCO2", "%");
 
@@ -252,7 +247,7 @@ public class FhirDeviceService {
         .setType(new CodeableConcept().addCoding(
             new Coding("http://hl7.org/fhir/CodeSystem/device-property-type",
                        "alarms settings", null)))
-        .setValueQuantity(ventilationSettingsQuantities);
+        .setValueQuantity(alarmsSettingsQuantities);
 
     // Add other property codes similarly...
 

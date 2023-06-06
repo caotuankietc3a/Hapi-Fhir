@@ -2,9 +2,6 @@ package com.hapihl7v2.examples.FhirClient;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 // @Configuration
 public class FhirClientConfiguration {

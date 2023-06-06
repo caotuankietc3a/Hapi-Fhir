@@ -21,6 +21,11 @@
     <property name="annotatedClasses">
       <list>
         <value>com.hl7v2.hapiexamples.model.CustomObservation</value>
+        <value>com.hl7v2.hapiexamples.model.Device</value>
+        <value>com.hl7v2.hapiexamples.model.Measure</value>
+        <value>com.hl7v2.hapiexamples.model.Status</value>
+        <value>com.hl7v2.hapiexamples.model.VentilationSettings</value>
+        <value>com.hl7v2.hapiexamples.model.AlarmsSettings</value>
       </list>
     </property>
     <property name="hibernateProperties">
@@ -28,11 +33,32 @@
         <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
         <prop key="hibernate.current_session_context_class">thread</prop>
         <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.hbm2ddl.auto">update</prop>
       </props>
     </property>
   </bean>
 
   <bean id="observationDAO" class="com.hl7v2.hapiexamples.dao.ObservationDAO">
+    <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
+  </bean>
+
+  <bean id="deviceDAO" class="com.hl7v2.hapiexamples.dao.DeviceDAO">
+    <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
+  </bean>
+
+  <bean id="measureDAO" class="com.hl7v2.hapiexamples.dao.MeasureDAO">
+    <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
+  </bean>
+
+  <bean id="statusDAO" class="com.hl7v2.hapiexamples.dao.StatusDAO">
+    <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
+  </bean>
+
+  <bean id="alarmsSettingsDAO" class="com.hl7v2.hapiexamples.dao.AlarmsSettingsDAO">
+    <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
+  </bean>
+
+  <bean id="ventilationSettingsDAO" class="com.hl7v2.hapiexamples.dao.VentilationSettingsDAO">
     <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory" />
   </bean>
 </beans>

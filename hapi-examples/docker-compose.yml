@@ -51,25 +51,24 @@ services:
       - elasticsearch
     links: # Sends incoming logs to the elasticsearch container.
       - elasticsearch
-      # hapi-fhir-postgres:
-      #   image: postgres:14.6
-      #   container_name: hapi-fhir-postgres
-      #   restart: always
-      #   ports:
-      #     - 5432:5432
-      #   environment:
-      #     POSTGRES_DB: hapi-fhir
-      #     POSTGRES_PASSWORD: admin
-      #   networks:
-      #     - hapi-fhir-net
-      #   volumes:
-      #     - hapi-fhir-postgres:/var/lib/postgresql/data
+  hapi-fhir-postgres:
+    image: postgres:14.6
+    container_name: hapi-fhir-postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: hapi-fhir
+      POSTGRES_PASSWORD: admin
+    networks:
+      - elasticsearch
+    volumes:
+      - hapi-fhir-postgres:/var/lib/postgresql/data
 volumes:
-  # hapi-fhir-postgres:
-  #   driver: local
+  hapi-fhir-postgres:
+    driver: local
   esdata:
     driver: local
 networks:
-  # hapi-fhir-net:
   elasticsearch:
     driver: bridge
