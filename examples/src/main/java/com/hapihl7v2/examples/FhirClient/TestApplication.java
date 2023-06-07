@@ -68,7 +68,7 @@ public class TestApplication {
     device.setIdBase(generateRandomString(6));
     device.setId(generateRandomString(6));
     device.setDistinctIdentifier(FhirDeviceService.DEVICES[random] + "-" +
-                                 generateRandomString(6));
+                                 random);
     // Identifier identifier = new Identifier();
     // identifier.setSystem("http://example.org/devices");
     // identifier.setValue(FhirDeviceService.DEVICES[random]);

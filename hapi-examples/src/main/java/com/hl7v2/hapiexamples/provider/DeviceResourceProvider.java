@@ -66,12 +66,12 @@ public class DeviceResourceProvider implements IResourceProvider {
                               @ConditionalUrlParam String theConditionalUrl) {
     // if (theConditionalUrl != null) {
     //   System.out.println(theConditionalUrl.split("&").toString());
-    //   createDeviceBasedOnConditionalUrl(device);
+    createDeviceBasedOnConditionalUrl(device);
     // } else {
     //   createDeviceNormally(device);
     // }
 
-    createDeviceNormally(device);
+    // createDeviceNormally(device);
 
     Integer id = devices.size() + 1;
     devices.put(id, device);

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <!-- <property name="LOG_FILE" value="LogFile" /> -->
-  <!-- <property name="FLUENTD_HOST" value="${FLUENTD_HOST:-localhost}" /> -->
-  <!-- <property name="FLUENTD_PORT" value="${FLUENTD_PORT:-24224}" /> -->
-  <!-- <appender name="FLUENT" class="ch.qos.logback.more.appenders.DataFluentAppender"> Check tag
-  and -->
-  <!--   <label> -->
-  <!--   @NORMAL</label> -->
-  <!--   <remoteHost>${FLUENTD_HOST}</remoteHost> -->
-  <!--   <port>${FLUENTD_PORT}</port> -->
-  <!--   <maxQueueSize> -->
-  <!--   20</maxQueueSize> -->
-  <!-- </appender> -->
+  <property name="LOG_FILE" value="LogFile" />
+  <property name="FLUENTD_HOST" value="${FLUENTD_HOST:-localhost}" />
+  <property name="FLUENTD_PORT" value="${FLUENTD_PORT:-24224}" />
+  <appender name="FLUENT" class="ch.qos.logback.more.appenders.DataFluentAppender">
+    <label>@NORMAL</label>
+    <remoteHost>${FLUENTD_HOST}</remoteHost>
+    <port>${FLUENTD_PORT}</port>
+  </appender>
   <appender name="JsonConsole" class="ch.qos.logback.core.ConsoleAppender">
     <encoder class="net.logstash.logback.encoder.LogstashEncoder">
       <fieldNames>
@@ -45,6 +41,6 @@
   <root level="INFO">
     <appender-ref ref="JsonConsole" />
     <!-- <appender-ref ref="JsonRollingFile" /> -->
-    <!-- <appender-ref ref="FLUENT" /> -->
+    <appender-ref ref="FLUENT" />
   </root>
 </configuration>

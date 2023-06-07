@@ -1,0 +1,947 @@
+Jun  5 00:05:10 caparies systemd-logind[956]: System is powering down.
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  5 05:36:59 caparies systemd-logind[940]: New seat seat0.
+Jun  5 05:36:59 caparies systemd-logind[940]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  5 05:36:59 caparies sshd[1313]: Server listening on 0.0.0.0 port 22.
+Jun  5 05:36:59 caparies sshd[1313]: Server listening on :: port 22.
+Jun  5 05:37:09 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 05:37:09 caparies systemd-logind[940]: New session c1 of user gdm.
+Jun  5 05:37:09 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 05:37:10 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.47 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 05:37:29 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  5 05:37:29 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  5 05:37:29 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 05:37:29 caparies systemd-logind[940]: New session 2 of user caparies.
+Jun  5 05:37:29 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 05:37:29 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  5 05:37:29 caparies gnome-keyring-daemon[2661]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  5 05:37:29 caparies gnome-keyring-daemon[2661]: The SSH agent was already initialized
+Jun  5 05:37:29 caparies gnome-keyring-daemon[2661]: The PKCS#11 component was already initialized
+Jun  5 05:37:29 caparies gnome-keyring-daemon[2661]: The Secret Service was already initialized
+Jun  5 05:37:31 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.92 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 05:37:31 caparies gnome-keyring-daemon[2661]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3322]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3319]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3325]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3328]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3418]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 05:37:31 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:37:31 caparies pkexec[3416]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 05:37:33 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  5 05:37:33 caparies systemd-logind[940]: Session c1 logged out. Waiting for processes to exit.
+Jun  5 05:37:33 caparies systemd-logind[940]: Removed session c1.
+Jun  5 05:37:33 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.47, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  5 05:37:36 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 05:37:36 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 05:38:34 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 05:38:34 caparies pkexec[5886]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  5 05:39:01 caparies CRON[6077]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 05:39:01 caparies CRON[6077]: pam_unix(cron:session): session closed for user root
+Jun  5 05:41:58 caparies su: (to nobody) root on none
+Jun  5 05:41:58 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  5 05:41:58 caparies systemd: pam_unix(systemd-user:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  5 05:41:58 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  5 05:41:58 caparies su: (to nobody) root on none
+Jun  5 05:41:58 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  5 05:41:58 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  5 05:41:58 caparies su: (to nobody) root on none
+Jun  5 05:41:58 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  5 05:42:09 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  5 06:09:01 caparies CRON[17104]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 06:09:01 caparies CRON[17104]: pam_unix(cron:session): session closed for user root
+Jun  5 06:17:01 caparies CRON[17610]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 06:17:01 caparies CRON[17610]: pam_unix(cron:session): session closed for user root
+Jun  5 06:25:01 caparies CRON[17731]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 06:25:01 caparies CRON[17731]: pam_unix(cron:session): session closed for user root
+Jun  5 06:37:37 caparies gnome-keyring-daemon[2661]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 06:38:36 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 06:38:36 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 06:39:01 caparies CRON[19459]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 06:39:01 caparies CRON[19459]: pam_unix(cron:session): session closed for user root
+Jun  5 06:41:35 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 06:41:35 caparies pkexec[19536]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  5 07:06:17 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[19975]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[19978]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[19981]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[19984]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[20000]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 07:06:18 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:06:18 caparies pkexec[20003]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 07:09:01 caparies CRON[20421]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 07:09:01 caparies CRON[20421]: pam_unix(cron:session): session closed for user root
+Jun  5 07:17:01 caparies CRON[21053]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 07:17:01 caparies CRON[21053]: pam_unix(cron:session): session closed for user root
+Jun  5 07:24:20 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 07:24:20 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:20 caparies pkexec[21247]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 07:24:21 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:21 caparies pkexec[21250]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 07:24:21 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:21 caparies pkexec[21253]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 07:24:21 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:21 caparies pkexec[21256]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 07:24:21 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:21 caparies pkexec[21272]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 07:24:21 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 07:24:21 caparies pkexec[21275]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 07:24:36 caparies systemd-logind[940]: System is powering down.
+Jun  5 08:12:13 caparies systemd-logind[940]: New seat seat0.
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  5 08:12:13 caparies systemd-logind[940]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  5 08:12:13 caparies sshd[1272]: Server listening on 0.0.0.0 port 22.
+Jun  5 08:12:13 caparies sshd[1272]: Server listening on :: port 22.
+Jun  5 08:12:23 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 08:12:23 caparies systemd-logind[940]: New session c1 of user gdm.
+Jun  5 08:12:23 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 08:12:25 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.49 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 08:14:46 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  5 08:14:46 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  5 08:14:46 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 08:14:46 caparies systemd-logind[940]: New session 2 of user caparies.
+Jun  5 08:14:46 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 08:14:46 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  5 08:14:46 caparies gnome-keyring-daemon[2654]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  5 08:14:46 caparies gnome-keyring-daemon[2654]: The SSH agent was already initialized
+Jun  5 08:14:46 caparies gnome-keyring-daemon[2654]: The PKCS#11 component was already initialized
+Jun  5 08:14:46 caparies gnome-keyring-daemon[2654]: The Secret Service was already initialized
+Jun  5 08:14:48 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.91 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 08:14:48 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec[3318]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 08:14:48 caparies pkexec[3315]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec[3321]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec[3324]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec[3417]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 08:14:48 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:14:48 caparies pkexec[3419]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 08:14:49 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  5 08:14:49 caparies systemd-logind[940]: Session c1 logged out. Waiting for processes to exit.
+Jun  5 08:14:50 caparies systemd-logind[940]: Removed session c1.
+Jun  5 08:14:50 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.49, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  5 08:14:51 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 08:14:51 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 08:15:02 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 08:15:02 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 08:15:05 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 08:15:05 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 08:15:51 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 08:15:51 caparies pkexec[7391]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  5 08:17:01 caparies CRON[7623]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 08:17:01 caparies CRON[7623]: pam_unix(cron:session): session closed for user root
+Jun  5 08:30:01 caparies CRON[16516]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 08:30:01 caparies CRON[16516]: pam_unix(cron:session): session closed for user root
+Jun  5 08:39:01 caparies CRON[19245]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 08:39:01 caparies CRON[19245]: pam_unix(cron:session): session closed for user root
+Jun  5 09:09:01 caparies CRON[27241]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 09:09:01 caparies CRON[27241]: pam_unix(cron:session): session closed for user root
+Jun  5 09:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 09:17:01 caparies CRON[28520]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 09:17:01 caparies CRON[28520]: pam_unix(cron:session): session closed for user root
+Jun  5 09:21:55 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/9, but it's already registered
+Jun  5 09:21:56 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/8, but it's already registered
+Jun  5 09:30:01 caparies CRON[34115]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 09:30:01 caparies CRON[34115]: pam_unix(cron:session): session closed for user root
+Jun  5 09:39:01 caparies CRON[35503]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 09:39:01 caparies CRON[35503]: pam_unix(cron:session): session closed for user root
+Jun  5 10:09:01 caparies CRON[39870]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 10:09:01 caparies CRON[39870]: pam_unix(cron:session): session closed for user root
+Jun  5 10:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 10:17:01 caparies CRON[40928]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 10:17:01 caparies CRON[40928]: pam_unix(cron:session): session closed for user root
+Jun  5 10:30:01 caparies CRON[43407]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 10:30:01 caparies CRON[43407]: pam_unix(cron:session): session closed for user root
+Jun  5 10:39:01 caparies CRON[44962]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 10:39:01 caparies CRON[44962]: pam_unix(cron:session): session closed for user root
+Jun  5 11:09:01 caparies CRON[49685]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 11:09:01 caparies CRON[49685]: pam_unix(cron:session): session closed for user root
+Jun  5 11:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 11:15:03 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 11:15:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:03 caparies pkexec[49879]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 11:15:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:03 caparies pkexec[49882]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 11:15:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:03 caparies pkexec[49885]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 11:15:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:03 caparies pkexec[49888]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 11:15:04 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:04 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 11:15:04 caparies pkexec[49904]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 11:15:04 caparies pkexec[49907]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 11:17:01 caparies CRON[50732]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 11:17:01 caparies CRON[50732]: pam_unix(cron:session): session closed for user root
+Jun  5 11:30:01 caparies CRON[54259]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 11:30:01 caparies CRON[54259]: pam_unix(cron:session): session closed for user root
+Jun  5 11:39:01 caparies CRON[56506]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 11:39:01 caparies CRON[56506]: pam_unix(cron:session): session closed for user root
+Jun  5 12:09:01 caparies CRON[59442]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 12:09:01 caparies CRON[59442]: pam_unix(cron:session): session closed for user root
+Jun  5 12:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 12:17:01 caparies CRON[59537]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 12:17:01 caparies CRON[59537]: pam_unix(cron:session): session closed for user root
+Jun  5 12:30:01 caparies CRON[59722]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 12:30:01 caparies CRON[59722]: pam_unix(cron:session): session closed for user root
+Jun  5 12:39:01 caparies CRON[59899]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 12:39:01 caparies CRON[59899]: pam_unix(cron:session): session closed for user root
+Jun  5 13:09:01 caparies CRON[60330]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 13:09:01 caparies CRON[60330]: pam_unix(cron:session): session closed for user root
+Jun  5 13:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 13:17:01 caparies CRON[60467]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 13:17:01 caparies CRON[60467]: pam_unix(cron:session): session closed for user root
+Jun  5 13:30:01 caparies CRON[60664]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 13:30:01 caparies CRON[60664]: pam_unix(cron:session): session closed for user root
+Jun  5 13:30:45 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60753]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60756]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60759]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60762]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60781]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 13:30:46 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 13:30:46 caparies pkexec[60784]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 13:39:01 caparies CRON[62169]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 13:39:01 caparies CRON[62169]: pam_unix(cron:session): session closed for user root
+Jun  5 14:09:01 caparies CRON[74890]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 14:09:01 caparies CRON[74890]: pam_unix(cron:session): session closed for user root
+Jun  5 14:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 14:17:01 caparies CRON[76511]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 14:17:01 caparies CRON[76511]: pam_unix(cron:session): session closed for user root
+Jun  5 14:30:01 caparies CRON[78505]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 14:30:01 caparies CRON[78505]: pam_unix(cron:session): session closed for user root
+Jun  5 14:39:01 caparies CRON[79915]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 14:39:01 caparies CRON[79915]: pam_unix(cron:session): session closed for user root
+Jun  5 15:08:13 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 15:09:01 caparies CRON[86320]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 15:09:01 caparies CRON[86320]: pam_unix(cron:session): session closed for user root
+Jun  5 15:17:01 caparies CRON[88128]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 15:17:01 caparies CRON[88128]: pam_unix(cron:session): session closed for user root
+Jun  5 15:21:50 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:21:50 caparies pkexec[90450]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  5 15:30:01 caparies CRON[98800]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 15:30:01 caparies CRON[98800]: pam_unix(cron:session): session closed for user root
+Jun  5 15:36:42 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99914]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99917]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99920]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99924]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99942]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 15:36:42 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 15:36:42 caparies pkexec[99945]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 15:39:01 caparies CRON[100696]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 15:39:01 caparies CRON[100696]: pam_unix(cron:session): session closed for user root
+Jun  5 16:09:01 caparies CRON[105646]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 16:09:01 caparies CRON[105646]: pam_unix(cron:session): session closed for user root
+Jun  5 16:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 16:17:02 caparies CRON[107290]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 16:17:02 caparies CRON[107290]: pam_unix(cron:session): session closed for user root
+Jun  5 16:30:01 caparies CRON[120111]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 16:30:01 caparies CRON[120111]: pam_unix(cron:session): session closed for user root
+Jun  5 16:39:01 caparies CRON[121425]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 16:39:01 caparies CRON[121425]: pam_unix(cron:session): session closed for user root
+Jun  5 17:09:01 caparies CRON[125522]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 17:09:01 caparies CRON[125522]: pam_unix(cron:session): session closed for user root
+Jun  5 17:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 17:17:01 caparies CRON[127018]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 17:17:01 caparies CRON[127018]: pam_unix(cron:session): session closed for user root
+Jun  5 17:30:01 caparies CRON[130021]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 17:30:01 caparies CRON[130021]: pam_unix(cron:session): session closed for user root
+Jun  5 17:39:01 caparies CRON[131352]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 17:39:01 caparies CRON[131352]: pam_unix(cron:session): session closed for user root
+Jun  5 18:09:01 caparies CRON[136490]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 18:09:01 caparies CRON[136490]: pam_unix(cron:session): session closed for user root
+Jun  5 18:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 18:17:01 caparies CRON[137606]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 18:17:01 caparies CRON[137606]: pam_unix(cron:session): session closed for user root
+Jun  5 18:30:01 caparies CRON[139442]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 18:30:01 caparies CRON[139442]: pam_unix(cron:session): session closed for user root
+Jun  5 18:39:01 caparies CRON[140840]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 18:39:01 caparies CRON[140840]: pam_unix(cron:session): session closed for user root
+Jun  5 19:09:01 caparies CRON[145715]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 19:09:01 caparies CRON[145715]: pam_unix(cron:session): session closed for user root
+Jun  5 19:14:53 caparies gnome-keyring-daemon[2654]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 19:17:01 caparies CRON[147676]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 19:17:01 caparies CRON[147676]: pam_unix(cron:session): session closed for user root
+Jun  5 19:27:51 caparies systemd-logind[940]: System is powering down.
+Jun  5 21:39:33 caparies systemd-logind[1110]: New seat seat0.
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  5 21:39:33 caparies systemd-logind[1110]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  5 21:39:33 caparies sshd[1232]: Server listening on 0.0.0.0 port 22.
+Jun  5 21:39:33 caparies sshd[1232]: Server listening on :: port 22.
+Jun  5 21:39:43 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 21:39:43 caparies systemd-logind[1110]: New session c1 of user gdm.
+Jun  5 21:39:43 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  5 21:39:45 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.48 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 21:41:27 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  5 21:41:27 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  5 21:41:27 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 21:41:27 caparies systemd-logind[1110]: New session 2 of user caparies.
+Jun  5 21:41:27 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  5 21:41:27 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  5 21:41:28 caparies gnome-keyring-daemon[2637]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  5 21:41:28 caparies gnome-keyring-daemon[2637]: The SSH agent was already initialized
+Jun  5 21:41:28 caparies gnome-keyring-daemon[2637]: The PKCS#11 component was already initialized
+Jun  5 21:41:28 caparies gnome-keyring-daemon[2637]: The Secret Service was already initialized
+Jun  5 21:41:29 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.94 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  5 21:41:29 caparies gnome-keyring-daemon[2637]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 21:41:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:29 caparies pkexec[3302]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 21:41:29 caparies pkexec[3304]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 21:41:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:29 caparies pkexec[3299]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 21:41:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:29 caparies pkexec[3308]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 21:41:30 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:30 caparies pkexec[3397]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 21:41:30 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:41:30 caparies pkexec[3400]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 21:41:31 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  5 21:41:31 caparies systemd-logind[1110]: Session c1 logged out. Waiting for processes to exit.
+Jun  5 21:41:31 caparies systemd-logind[1110]: Removed session c1.
+Jun  5 21:41:31 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.48, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  5 21:41:33 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 21:41:33 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 21:41:42 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 21:41:42 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 21:41:45 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  5 21:41:45 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  5 21:42:06 caparies gnome-keyring-daemon[2637]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 21:42:32 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 21:42:32 caparies pkexec[6097]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  5 22:09:01 caparies CRON[16384]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 22:09:01 caparies CRON[16384]: pam_unix(cron:session): session closed for user root
+Jun  5 22:17:01 caparies CRON[17798]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 22:17:01 caparies CRON[17798]: pam_unix(cron:session): session closed for user root
+Jun  5 22:30:01 caparies CRON[20252]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 22:30:01 caparies CRON[20252]: pam_unix(cron:session): session closed for user root
+Jun  5 22:39:01 caparies CRON[21592]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 22:39:01 caparies CRON[21592]: pam_unix(cron:session): session closed for user root
+Jun  5 22:41:34 caparies gnome-keyring-daemon[2637]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 22:54:03 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 22:54:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:03 caparies pkexec[23050]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 22:54:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:03 caparies pkexec[23053]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 22:54:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:03 caparies pkexec[23056]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 22:54:03 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:03 caparies pkexec[23059]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 22:54:04 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:04 caparies pkexec[23075]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 22:54:04 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 22:54:04 caparies pkexec[23078]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 23:09:01 caparies CRON[25533]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 23:09:01 caparies CRON[25533]: pam_unix(cron:session): session closed for user root
+Jun  5 23:17:01 caparies CRON[26147]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 23:17:01 caparies CRON[26147]: pam_unix(cron:session): session closed for user root
+Jun  5 23:19:35 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26256]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26259]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26262]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26265]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26281]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  5 23:19:36 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  5 23:19:36 caparies pkexec[26284]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  5 23:30:01 caparies CRON[27915]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 23:30:01 caparies CRON[27915]: pam_unix(cron:session): session closed for user root
+Jun  5 23:39:01 caparies CRON[29534]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  5 23:39:01 caparies CRON[29534]: pam_unix(cron:session): session closed for user root
+Jun  5 23:41:34 caparies gnome-keyring-daemon[2637]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  5 23:49:17 caparies systemd-logind[1110]: System is powering down.
+Jun  6 08:13:04 caparies systemd-logind[928]: New seat seat0.
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  6 08:13:04 caparies systemd-logind[928]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  6 08:13:04 caparies sshd[1301]: Server listening on 0.0.0.0 port 22.
+Jun  6 08:13:04 caparies sshd[1301]: Server listening on :: port 22.
+Jun  6 08:13:14 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  6 08:13:14 caparies systemd-logind[928]: New session c1 of user gdm.
+Jun  6 08:13:14 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  6 08:13:16 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.49 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  6 08:13:35 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  6 08:13:35 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  6 08:13:35 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  6 08:13:35 caparies systemd-logind[928]: New session 2 of user caparies.
+Jun  6 08:13:35 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  6 08:13:35 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  6 08:13:35 caparies gnome-keyring-daemon[2634]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  6 08:13:36 caparies gnome-keyring-daemon[2634]: The SSH agent was already initialized
+Jun  6 08:13:36 caparies gnome-keyring-daemon[2634]: The PKCS#11 component was already initialized
+Jun  6 08:13:36 caparies gnome-keyring-daemon[2634]: The Secret Service was already initialized
+Jun  6 08:13:37 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.91 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  6 08:13:38 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec[3293]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 08:13:38 caparies pkexec[3299]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec[3290]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec[3296]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec[3373]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 08:13:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:13:38 caparies pkexec[3375]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 08:13:39 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  6 08:13:39 caparies systemd-logind[928]: Session c1 logged out. Waiting for processes to exit.
+Jun  6 08:13:39 caparies systemd-logind[928]: Removed session c1.
+Jun  6 08:13:39 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.49, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  6 08:13:41 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 08:13:41 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 08:13:53 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 08:13:53 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 08:13:56 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 08:13:56 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 08:14:13 caparies polkitd(authority=local): Operator of unix-session:2 successfully authenticated as unix-user:caparies to gain TEMPORARY authorization for action io.snapcraft.snapd.manage for unix-process:3172:4415 [/snap/snap-store/959/usr/bin/snap-store --gapplication-service] (owned by unix-user:caparies)
+Jun  6 08:14:40 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:14:40 caparies pkexec[7516]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  6 08:17:01 caparies CRON[7894]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 08:17:01 caparies CRON[7894]: pam_unix(cron:session): session closed for user root
+Jun  6 08:18:03 caparies su: (to nobody) root on none
+Jun  6 08:18:03 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  6 08:18:03 caparies systemd: pam_unix(systemd-user:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  6 08:18:03 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  6 08:18:03 caparies su: (to nobody) root on none
+Jun  6 08:18:03 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  6 08:18:03 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  6 08:18:03 caparies su: (to nobody) root on none
+Jun  6 08:18:03 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  6 08:18:13 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  6 08:18:40 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/9, but it's already registered
+Jun  6 08:18:40 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/8, but it's already registered
+Jun  6 08:30:01 caparies CRON[14506]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 08:30:01 caparies CRON[14506]: pam_unix(cron:session): session closed for user root
+Jun  6 08:34:14 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14648]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14657]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14651]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14654]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14673]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 08:34:15 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:34:15 caparies pkexec[14676]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 08:39:01 caparies CRON[16218]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 08:39:01 caparies CRON[16218]: pam_unix(cron:session): session closed for user root
+Jun  6 08:47:39 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 08:47:39 caparies pkexec[19028]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  6 09:09:02 caparies CRON[22639]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 09:09:02 caparies CRON[22639]: pam_unix(cron:session): session closed for user root
+Jun  6 09:13:42 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 09:17:01 caparies CRON[24556]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 09:17:01 caparies CRON[24556]: pam_unix(cron:session): session closed for user root
+Jun  6 09:30:01 caparies CRON[26408]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 09:30:01 caparies CRON[26408]: pam_unix(cron:session): session closed for user root
+Jun  6 09:39:01 caparies CRON[27641]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 09:39:01 caparies CRON[27641]: pam_unix(cron:session): session closed for user root
+Jun  6 10:09:01 caparies CRON[38280]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 10:09:01 caparies CRON[38280]: pam_unix(cron:session): session closed for user root
+Jun  6 10:13:42 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 10:17:01 caparies CRON[39808]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 10:17:01 caparies CRON[39808]: pam_unix(cron:session): session closed for user root
+Jun  6 10:30:01 caparies CRON[42553]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 10:30:01 caparies CRON[42553]: pam_unix(cron:session): session closed for user root
+Jun  6 10:39:01 caparies CRON[44159]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 10:39:01 caparies CRON[44159]: pam_unix(cron:session): session closed for user root
+Jun  6 11:09:01 caparies CRON[50655]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 11:09:01 caparies CRON[50655]: pam_unix(cron:session): session closed for user root
+Jun  6 11:13:42 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 11:17:01 caparies CRON[52464]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 11:17:01 caparies CRON[52464]: pam_unix(cron:session): session closed for user root
+Jun  6 11:30:01 caparies CRON[55011]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 11:30:01 caparies CRON[55011]: pam_unix(cron:session): session closed for user root
+Jun  6 11:39:01 caparies CRON[56380]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 11:39:01 caparies CRON[56380]: pam_unix(cron:session): session closed for user root
+Jun  6 12:04:08 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 12:09:01 caparies CRON[59554]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 12:09:01 caparies CRON[59554]: pam_unix(cron:session): session closed for user root
+Jun  6 12:17:01 caparies CRON[59877]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 12:17:01 caparies CRON[59877]: pam_unix(cron:session): session closed for user root
+Jun  6 12:30:01 caparies CRON[60249]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 12:30:01 caparies CRON[60249]: pam_unix(cron:session): session closed for user root
+Jun  6 12:39:01 caparies CRON[60509]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 12:39:01 caparies CRON[60509]: pam_unix(cron:session): session closed for user root
+Jun  6 13:04:30 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 13:09:01 caparies CRON[61470]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 13:09:01 caparies CRON[61470]: pam_unix(cron:session): session closed for user root
+Jun  6 13:17:01 caparies CRON[61782]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 13:17:01 caparies CRON[61782]: pam_unix(cron:session): session closed for user root
+Jun  6 13:30:01 caparies CRON[62146]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 13:30:01 caparies CRON[62146]: pam_unix(cron:session): session closed for user root
+Jun  6 13:31:25 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62266]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62272]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62269]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62275]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62291]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 13:31:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:31:26 caparies pkexec[62294]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 13:39:01 caparies CRON[67104]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 13:39:01 caparies CRON[67104]: pam_unix(cron:session): session closed for user root
+Jun  6 13:56:52 caparies systemd-logind[928]: Lid closed.
+Jun  6 13:56:52 caparies systemd-logind[928]: Suspending...
+Jun  6 13:57:33 caparies systemd-logind[928]: Lid opened.
+Jun  6 13:57:33 caparies systemd-logind[928]: Operation 'sleep' finished.
+Jun  6 13:57:41 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 13:57:54 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71315]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71318]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71321]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71324]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71343]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 13:57:55 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 13:57:55 caparies pkexec[71346]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 14:09:01 caparies CRON[75353]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 14:09:01 caparies CRON[75353]: pam_unix(cron:session): session closed for user root
+Jun  6 14:17:01 caparies CRON[76437]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 14:17:01 caparies CRON[76437]: pam_unix(cron:session): session closed for user root
+Jun  6 14:23:26 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 14:23:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:26 caparies pkexec[76981]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 14:23:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:26 caparies pkexec[76984]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 14:23:26 caparies pkexec[76987]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 14:23:26 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:26 caparies pkexec[76990]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 14:23:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:27 caparies pkexec[77006]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 14:23:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:23:27 caparies pkexec[77009]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 14:30:01 caparies CRON[77816]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 14:30:01 caparies CRON[77816]: pam_unix(cron:session): session closed for user root
+Jun  6 14:31:30 caparies systemd-logind[928]: Lid closed.
+Jun  6 14:31:30 caparies systemd-logind[928]: Suspending...
+Jun  6 14:33:22 caparies systemd-logind[928]: Lid opened.
+Jun  6 14:33:22 caparies systemd-logind[928]: Operation 'sleep' finished.
+Jun  6 14:33:37 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78361]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78364]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78370]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78367]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78386]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 14:33:38 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 14:33:38 caparies pkexec[78389]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 14:39:01 caparies CRON[79383]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 14:39:01 caparies CRON[79383]: pam_unix(cron:session): session closed for user root
+Jun  6 15:08:10 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 15:08:10 caparies pkexec[86046]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  6 15:09:01 caparies CRON[86377]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 15:09:01 caparies CRON[86377]: pam_unix(cron:session): session closed for user root
+Jun  6 15:16:12 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 15:17:01 caparies CRON[88173]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 15:17:01 caparies CRON[88173]: pam_unix(cron:session): session closed for user root
+Jun  6 15:30:01 caparies CRON[91325]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 15:30:01 caparies CRON[91325]: pam_unix(cron:session): session closed for user root
+Jun  6 15:39:01 caparies CRON[93168]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 15:39:01 caparies CRON[93168]: pam_unix(cron:session): session closed for user root
+Jun  6 16:09:01 caparies CRON[98767]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 16:09:01 caparies CRON[98767]: pam_unix(cron:session): session closed for user root
+Jun  6 16:16:12 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 16:17:01 caparies CRON[99842]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 16:17:01 caparies CRON[99842]: pam_unix(cron:session): session closed for user root
+Jun  6 16:30:01 caparies CRON[101541]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 16:30:01 caparies CRON[101541]: pam_unix(cron:session): session closed for user root
+Jun  6 16:39:01 caparies CRON[101768]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 16:39:01 caparies CRON[101768]: pam_unix(cron:session): session closed for user root
+Jun  6 17:09:01 caparies CRON[102329]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 17:09:01 caparies CRON[102329]: pam_unix(cron:session): session closed for user root
+Jun  6 17:16:12 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 17:17:01 caparies CRON[102471]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 17:17:01 caparies CRON[102471]: pam_unix(cron:session): session closed for user root
+Jun  6 17:30:01 caparies CRON[102697]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 17:30:01 caparies CRON[102697]: pam_unix(cron:session): session closed for user root
+Jun  6 17:34:40 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102864]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102867]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102870]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102873]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102889]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 17:34:41 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 17:34:41 caparies pkexec[102892]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 17:39:01 caparies CRON[103657]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 17:39:01 caparies CRON[103657]: pam_unix(cron:session): session closed for user root
+Jun  6 18:09:01 caparies CRON[108982]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 18:09:01 caparies CRON[108982]: pam_unix(cron:session): session closed for user root
+Jun  6 18:16:12 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 18:17:01 caparies CRON[110421]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 18:17:01 caparies CRON[110421]: pam_unix(cron:session): session closed for user root
+Jun  6 18:30:01 caparies CRON[115351]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 18:30:01 caparies CRON[115351]: pam_unix(cron:session): session closed for user root
+Jun  6 18:39:01 caparies CRON[118375]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 18:39:01 caparies CRON[118375]: pam_unix(cron:session): session closed for user root
+Jun  6 19:09:01 caparies CRON[125676]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 19:09:01 caparies CRON[125676]: pam_unix(cron:session): session closed for user root
+Jun  6 19:16:12 caparies gnome-keyring-daemon[2634]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 19:17:01 caparies CRON[128386]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 19:17:01 caparies CRON[128386]: pam_unix(cron:session): session closed for user root
+Jun  6 19:30:01 caparies CRON[131296]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 19:30:01 caparies CRON[131296]: pam_unix(cron:session): session closed for user root
+Jun  6 19:37:06 caparies systemd-logind[928]: System is powering down.
+Jun  6 20:15:50 caparies systemd-logind[1113]: New seat seat0.
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  6 20:15:50 caparies systemd-logind[1113]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  6 20:15:50 caparies sshd[1216]: Server listening on 0.0.0.0 port 22.
+Jun  6 20:15:50 caparies sshd[1216]: Server listening on :: port 22.
+Jun  6 20:16:00 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  6 20:16:00 caparies systemd-logind[1113]: New session c1 of user gdm.
+Jun  6 20:16:00 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  6 20:16:02 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.48 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  6 20:16:25 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  6 20:16:25 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  6 20:16:25 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  6 20:16:25 caparies systemd-logind[1113]: New session 2 of user caparies.
+Jun  6 20:16:25 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  6 20:16:25 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  6 20:16:25 caparies gnome-keyring-daemon[2765]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  6 20:16:25 caparies gnome-keyring-daemon[2765]: The SSH agent was already initialized
+Jun  6 20:16:25 caparies gnome-keyring-daemon[2765]: The PKCS#11 component was already initialized
+Jun  6 20:16:25 caparies gnome-keyring-daemon[2765]: The Secret Service was already initialized
+Jun  6 20:16:27 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.93 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  6 20:16:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:27 caparies pkexec[3425]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 20:16:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:27 caparies pkexec[3422]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 20:16:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:27 caparies pkexec[3428]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 20:16:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:27 caparies pkexec[3431]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 20:16:28 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:28 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:16:28 caparies pkexec[3527]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 20:16:28 caparies pkexec[3529]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 20:16:28 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 20:16:30 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  6 20:16:30 caparies systemd-logind[1113]: Session c1 logged out. Waiting for processes to exit.
+Jun  6 20:16:30 caparies systemd-logind[1113]: Removed session c1.
+Jun  6 20:16:30 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.48, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  6 20:16:34 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 20:16:34 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 20:16:43 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 20:16:43 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 20:16:46 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  6 20:16:46 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  6 20:17:00 caparies CRON[6238]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 20:17:00 caparies CRON[6238]: pam_unix(cron:session): session closed for user root
+Jun  6 20:17:30 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 20:17:30 caparies pkexec[6401]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  6 20:30:01 caparies CRON[8305]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 20:30:01 caparies CRON[8305]: pam_unix(cron:session): session closed for user root
+Jun  6 20:39:01 caparies CRON[9445]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 20:39:01 caparies CRON[9445]: pam_unix(cron:session): session closed for user root
+Jun  6 21:09:01 caparies CRON[17659]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 21:09:01 caparies CRON[17659]: pam_unix(cron:session): session closed for user root
+Jun  6 21:16:32 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 21:17:01 caparies CRON[19536]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 21:17:01 caparies CRON[19536]: pam_unix(cron:session): session closed for user root
+Jun  6 21:22:58 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[20999]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[21002]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[21005]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[21008]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[21027]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  6 21:22:59 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  6 21:22:59 caparies pkexec[21030]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  6 21:30:01 caparies CRON[22826]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 21:30:01 caparies CRON[22826]: pam_unix(cron:session): session closed for user root
+Jun  6 21:39:02 caparies CRON[24038]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 21:39:02 caparies CRON[24038]: pam_unix(cron:session): session closed for user root
+Jun  6 22:09:01 caparies CRON[27829]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 22:09:01 caparies CRON[27829]: pam_unix(cron:session): session closed for user root
+Jun  6 22:16:32 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 22:17:01 caparies CRON[28857]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 22:17:01 caparies CRON[28857]: pam_unix(cron:session): session closed for user root
+Jun  6 22:23:42 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/9, but it's already registered
+Jun  6 22:23:42 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/8, but it's already registered
+Jun  6 22:30:01 caparies CRON[31200]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 22:30:01 caparies CRON[31200]: pam_unix(cron:session): session closed for user root
+Jun  6 22:39:01 caparies CRON[32669]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 22:39:01 caparies CRON[32669]: pam_unix(cron:session): session closed for user root
+Jun  6 23:09:01 caparies CRON[37612]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 23:09:01 caparies CRON[37612]: pam_unix(cron:session): session closed for user root
+Jun  6 23:16:32 caparies gnome-keyring-daemon[2765]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  6 23:17:01 caparies CRON[38978]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 23:17:01 caparies CRON[38978]: pam_unix(cron:session): session closed for user root
+Jun  6 23:30:01 caparies CRON[41510]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 23:30:01 caparies CRON[41510]: pam_unix(cron:session): session closed for user root
+Jun  6 23:39:01 caparies CRON[43533]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  6 23:39:01 caparies CRON[43533]: pam_unix(cron:session): session closed for user root
+Jun  7 00:01:39 caparies systemd-logind[1113]: System is powering down.
+Jun  7 08:00:20 caparies systemd-logind[920]: New seat seat0.
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event11 (Compx 2.4G Receiver System Control)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event12 (Compx 2.4G Wireless Receiver)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event15 (Compx 2.4G Wireless Receiver Keyboard)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event4 (AT Translated Set 2 keyboard)
+Jun  7 08:00:20 caparies systemd-logind[920]: Watching system buttons on /dev/input/event5 (Acer WMI hotkeys)
+Jun  7 08:00:21 caparies sshd[1273]: Server listening on 0.0.0.0 port 22.
+Jun  7 08:00:21 caparies sshd[1273]: Server listening on :: port 22.
+Jun  7 08:00:30 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  7 08:00:30 caparies systemd-logind[920]: New session c1 of user gdm.
+Jun  7 08:00:30 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Jun  7 08:00:32 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.50 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  7 08:01:47 caparies gdm-password]: gkr-pam: unable to locate daemon control file
+Jun  7 08:01:47 caparies gdm-password]: gkr-pam: stashed password to try later in open session
+Jun  7 08:01:47 caparies gdm-password]: pam_unix(gdm-password:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  7 08:01:47 caparies systemd-logind[920]: New session 2 of user caparies.
+Jun  7 08:01:47 caparies systemd: pam_unix(systemd-user:session): session opened for user caparies(uid=1000) by (uid=0)
+Jun  7 08:01:47 caparies gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Jun  7 08:01:47 caparies gnome-keyring-daemon[2819]: keyring was in an invalid or unrecognized format: /home/caparies/.local/share/keyrings/default.keyring
+Jun  7 08:01:47 caparies gnome-keyring-daemon[2819]: The SSH agent was already initialized
+Jun  7 08:01:47 caparies gnome-keyring-daemon[2819]: The PKCS#11 component was already initialized
+Jun  7 08:01:47 caparies gnome-keyring-daemon[2819]: The Secret Service was already initialized
+Jun  7 08:01:49 caparies polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.93 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec[3475]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec[3484]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  7 08:01:49 caparies pkexec[3478]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec[3481]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec[3580]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 08:01:49 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:01:49 caparies pkexec[3582]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 08:01:50 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 08:01:50 caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Jun  7 08:01:50 caparies systemd-logind[920]: Session c1 logged out. Waiting for processes to exit.
+Jun  7 08:01:50 caparies systemd-logind[920]: Removed session c1.
+Jun  7 08:01:51 caparies polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.50, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Jun  7 08:01:52 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  7 08:01:52 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  7 08:02:02 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  7 08:02:02 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  7 08:02:05 caparies PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Jun  7 08:02:05 caparies PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Jun  7 08:02:32 caparies polkitd(authority=local): Operator of unix-session:2 successfully authenticated as unix-user:caparies to gain TEMPORARY authorization for action io.snapcraft.snapd.manage for unix-process:3343:9633 [/snap/snap-store/959/usr/bin/snap-store --gapplication-service] (owned by unix-user:caparies)
+Jun  7 08:02:52 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:02:52 caparies pkexec[6881]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  7 08:05:19 caparies su: (to nobody) root on none
+Jun  7 08:05:19 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  7 08:05:19 caparies systemd: pam_unix(systemd-user:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  7 08:05:19 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  7 08:05:19 caparies su: (to nobody) root on none
+Jun  7 08:05:19 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  7 08:05:19 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  7 08:05:19 caparies su: (to nobody) root on none
+Jun  7 08:05:19 caparies su: pam_unix(su:session): session opened for user nobody(uid=65534) by (uid=0)
+Jun  7 08:05:31 caparies su: pam_unix(su:session): session closed for user nobody
+Jun  7 08:09:01 caparies CRON[9481]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 08:09:01 caparies CRON[9481]: pam_unix(cron:session): session closed for user root
+Jun  7 08:17:01 caparies CRON[13538]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 08:17:01 caparies CRON[13538]: pam_unix(cron:session): session closed for user root
+Jun  7 08:30:01 caparies CRON[15505]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 08:30:01 caparies CRON[15505]: pam_unix(cron:session): session closed for user root
+Jun  7 08:39:01 caparies CRON[16785]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 08:39:01 caparies CRON[16785]: pam_unix(cron:session): session closed for user root
+Jun  7 08:53:51 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 08:53:51 caparies pkexec[20770]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Jun  7 09:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 09:09:01 caparies CRON[23205]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 09:09:01 caparies CRON[23205]: pam_unix(cron:session): session closed for user root
+Jun  7 09:17:01 caparies CRON[24489]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 09:17:01 caparies CRON[24489]: pam_unix(cron:session): session closed for user root
+Jun  7 09:22:52 caparies polkitd(authority=local): Operator of unix-session:2 successfully authenticated as unix-user:caparies to gain TEMPORARY authorization for action io.snapcraft.snapd.manage for unix-process:3343:9633 [/snap/snap-store/959/usr/bin/snap-store --gapplication-service] (owned by unix-user:caparies)
+Jun  7 09:30:01 caparies CRON[27033]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 09:30:01 caparies CRON[27033]: pam_unix(cron:session): session closed for user root
+Jun  7 09:39:01 caparies CRON[29332]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 09:39:01 caparies CRON[29332]: pam_unix(cron:session): session closed for user root
+Jun  7 10:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 10:09:01 caparies CRON[42998]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 10:09:01 caparies CRON[42998]: pam_unix(cron:session): session closed for user root
+Jun  7 10:17:01 caparies CRON[45112]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 10:17:01 caparies CRON[45112]: pam_unix(cron:session): session closed for user root
+Jun  7 10:23:42 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/9, but it's already registered
+Jun  7 10:23:42 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/8, but it's already registered
+Jun  7 10:30:01 caparies CRON[48397]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 10:30:01 caparies CRON[48397]: pam_unix(cron:session): session closed for user root
+Jun  7 10:39:01 caparies CRON[51395]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 10:39:01 caparies CRON[51395]: pam_unix(cron:session): session closed for user root
+Jun  7 11:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 11:09:01 caparies CRON[62137]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 11:09:01 caparies CRON[62137]: pam_unix(cron:session): session closed for user root
+Jun  7 11:17:01 caparies CRON[66028]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 11:17:01 caparies CRON[66028]: pam_unix(cron:session): session closed for user root
+Jun  7 11:30:01 caparies CRON[68815]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 11:30:01 caparies CRON[68815]: pam_unix(cron:session): session closed for user root
+Jun  7 11:39:01 caparies CRON[75188]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 11:39:01 caparies CRON[75188]: pam_unix(cron:session): session closed for user root
+Jun  7 12:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 12:09:01 caparies CRON[81995]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 12:09:01 caparies CRON[81995]: pam_unix(cron:session): session closed for user root
+Jun  7 12:17:01 caparies CRON[82103]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 12:17:01 caparies CRON[82103]: pam_unix(cron:session): session closed for user root
+Jun  7 12:30:01 caparies CRON[82356]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 12:30:01 caparies CRON[82356]: pam_unix(cron:session): session closed for user root
+Jun  7 12:39:01 caparies CRON[82536]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 12:39:01 caparies CRON[82536]: pam_unix(cron:session): session closed for user root
+Jun  7 13:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 13:09:01 caparies CRON[82976]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 13:09:01 caparies CRON[82976]: pam_unix(cron:session): session closed for user root
+Jun  7 13:17:01 caparies CRON[83093]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 13:17:01 caparies CRON[83093]: pam_unix(cron:session): session closed for user root
+Jun  7 13:30:01 caparies CRON[83277]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 13:30:01 caparies CRON[83277]: pam_unix(cron:session): session closed for user root
+Jun  7 13:34:29 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83424]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83429]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83434]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83437]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83453]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 13:34:29 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 13:34:29 caparies pkexec[83456]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 13:39:01 caparies CRON[84183]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 13:39:01 caparies CRON[84183]: pam_unix(cron:session): session closed for user root
+Jun  7 13:52:53 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 14:09:01 caparies CRON[113132]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 14:09:01 caparies CRON[113132]: pam_unix(cron:session): session closed for user root
+Jun  7 14:17:01 caparies CRON[114586]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 14:17:01 caparies CRON[114586]: pam_unix(cron:session): session closed for user root
+Jun  7 14:30:01 caparies CRON[119789]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 14:30:01 caparies CRON[119789]: pam_unix(cron:session): session closed for user root
+Jun  7 14:39:01 caparies CRON[122016]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 14:39:01 caparies CRON[122016]: pam_unix(cron:session): session closed for user root
+Jun  7 15:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 15:09:01 caparies CRON[129133]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 15:09:01 caparies CRON[129133]: pam_unix(cron:session): session closed for user root
+Jun  7 15:17:01 caparies CRON[133267]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 15:17:01 caparies CRON[133267]: pam_unix(cron:session): session closed for user root
+Jun  7 15:30:01 caparies CRON[135886]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 15:30:01 caparies CRON[135886]: pam_unix(cron:session): session closed for user root
+Jun  7 15:39:01 caparies CRON[137472]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 15:39:01 caparies CRON[137472]: pam_unix(cron:session): session closed for user root
+Jun  7 16:01:55 caparies gnome-keyring-daemon[2819]: asked to register item /org/freedesktop/secrets/collection/login/5, but it's already registered
+Jun  7 16:02:26 caparies gdm-password]: gkr-pam: unlocked login keyring
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141425]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141428]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141431]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json turbo set on]
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141437]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json info frequencies]
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141453]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json min set 50]
+Jun  7 16:02:27 caparies pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Jun  7 16:02:27 caparies pkexec[141456]: caparies: Executing command [USER=root] [TTY=unknown] [CWD=/home/caparies/.local/share/gnome-shell/extensions/cpupower@mko-sl.de] [COMMAND=/usr/local/bin/cpufreqctl-caparies --backend automatic --format json max set 100]
+Jun  7 16:09:01 caparies CRON[142935]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 16:09:01 caparies CRON[142935]: pam_unix(cron:session): session closed for user root
+Jun  7 16:17:01 caparies CRON[144727]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 16:17:01 caparies CRON[144727]: pam_unix(cron:session): session closed for user root
+Jun  7 16:30:01 caparies CRON[147293]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 16:30:01 caparies CRON[147293]: pam_unix(cron:session): session closed for user root
+Jun  7 16:39:02 caparies CRON[152745]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun  7 16:39:02 caparies CRON[152745]: pam_unix(cron:session): session closed for user root

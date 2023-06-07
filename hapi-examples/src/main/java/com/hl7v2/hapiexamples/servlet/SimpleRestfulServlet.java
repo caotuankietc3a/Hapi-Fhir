@@ -34,7 +34,7 @@ public class SimpleRestfulServlet extends RestfulServer {
     // be used here. See the JavaDoc for LoggingInterceptor for information on
     // what is available.
     loggingInterceptor.setMessageFormat(
-        "Source[${remoteAddr}] Operation[${operationType} ${idOrResourceName}] UA[${requestHeader.user-agent}] Params[${requestParameters}]");
+        "Source[${remoteAddr}] Operation[${operationType} ${idOrResourceName}] requestHeader[${requestHeader.user-agent}] requestParameters[${requestParameters}] requestUrl[${requestUrl}] method[${requestVerb}] servletPath[${servletPath}]");
 
     ExceptionHandlingInterceptor interceptor =
         new ExceptionHandlingInterceptor();
