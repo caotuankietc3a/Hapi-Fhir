@@ -22,6 +22,7 @@
       <list>
         <value>com.hl7v2.hapiexamples.model.CustomObservation</value>
         <value>com.hl7v2.hapiexamples.model.Device</value>
+        <value>com.hl7v2.hapiexamples.model.DeviceId</value>
         <value>com.hl7v2.hapiexamples.model.Measure</value>
         <value>com.hl7v2.hapiexamples.model.Status</value>
         <value>com.hl7v2.hapiexamples.model.VentilationSettings</value>

@@ -9,6 +9,7 @@ import ca.uhn.fhir.rest.annotation.ResourceParam;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import com.hl7v2.hapiexamples.dao.AlarmsSettingsDAO;
+import com.hl7v2.hapiexamples.dao.DeviceDAO;
 import com.hl7v2.hapiexamples.dao.MeasureDAO;
 import com.hl7v2.hapiexamples.dao.StatusDAO;
 import com.hl7v2.hapiexamples.dao.VentilationSettingsDAO;
@@ -87,7 +88,6 @@ public class DeviceResourceProvider implements IResourceProvider {
   }
 
   private void createDeviceBasedOnConditionalUrl(final Device device) {
-    logger.info("LOG TEST DEVICE");
     fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(
         device);
   }
@@ -96,22 +96,79 @@ public class DeviceResourceProvider implements IResourceProvider {
 
     fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(
         device);
+    // int measureId = 1, statusId = 1, ventilationSettingsId = 1,
+    //     alarmsSettingsId = 1;
+
+    com.hl7v2.hapiexamples.model.Device mDevice =
+        generateDevice(device.getDistinctIdentifier());
+    saveDevice(mDevice);
 
     for (DevicePropertyComponent prop : device.getProperty()) {
       String type = prop.getType().getCoding().get(0).getCode();
+
       // recordLogs(device.getDistinctIdentifier(), type,
+      // prop.getValueQuantity());
 
       if (type.equals("measures")) {
-        saveMeasure(generateMeasure(prop.getValueQuantity()));
+        try {
+          Measure measure = generateMeasure(prop.getValueQuantity());
+          measure.setDevice(mDevice);
+          mDevice.getMeasures().add(measure);
+          saveMeasure(measure);
+        } catch (Exception e) {
+          logger.error(e.getMessage());
+        }
       } else if (type.equals("status")) {
-        saveStatus(generateStatus(prop.getValueQuantity()));
+        try {
+          Status status = generateStatus(prop.getValueQuantity());
+          status.setDevice(mDevice);
+          mDevice.getStatus().add(status);
+          saveStatus(status);
+        } catch (Exception e) {
+          logger.error(e.getMessage());
+        }
       } else if (type.equals("ventilation settings")) {
-        saveVentilationSettings(
-            generateventilationSettings(prop.getValueQuantity()));
+        try {
+          VentilationSettings ventilationSettings =
+              generateventilationSettings(prop.getValueQuantity());
+          ventilationSettings.setDevice(mDevice);
+          mDevice.getVentilationSettings().add(ventilationSettings);
+          saveVentilationSettings(ventilationSettings);
+        } catch (Exception e) {
+          logger.error(e.getMessage());
+        }
       } else if (type.equals("alarms settings")) {
-        saveAlarmsSettings(generateAlarmsSettings(prop.getValueQuantity()));
+        try {
+          AlarmsSettings alarmsSettings =
+              generateAlarmsSettings(prop.getValueQuantity());
+          alarmsSettings.setDevice(mDevice);
+          mDevice.getAlarmsSettings().add(alarmsSettings);
+          saveAlarmsSettings(alarmsSettings);
+        } catch (Exception e) {
+          logger.error(e.getMessage());
+        }
       }
     }
+  }
+
+  private void saveDevice(com.hl7v2.hapiexamples.model.Device device) {
+    try (ClassPathXmlApplicationContext context =
+             new ClassPathXmlApplicationContext("spring.xml")) {
+      DeviceDAO deviceDAO = context.getBean(DeviceDAO.class);
+      deviceDAO.save(device);
+    } catch (Exception e) {
+      System.err.println(e.getMessage());
+    }
+  }
+
+  private com.hl7v2.hapiexamples.model.Device generateDevice(String id) {
+    String[] identifier = id.split("-");
+    com.hl7v2.hapiexamples.model.Device device =
+        new com.hl7v2.hapiexamples.model.Device();
+    device.setDeviceId(Integer.parseInt(identifier[1]));
+    device.setDeviceName(identifier[0]);
+    device.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+    return device;
   }
 
   private void saveAlarmsSettings(AlarmsSettings generateAlarmsSettings) {
@@ -120,7 +177,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       AlarmsSettingsDAO alarmsSettingsDAO =
           context.getBean(AlarmsSettingsDAO.class);
       alarmsSettingsDAO.save(generateAlarmsSettings);
-      logger.debug(generateAlarmsSettings.toString());
     } catch (Exception e) {
       System.err.println(e.getMessage());
     }
@@ -174,7 +230,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       }
     }
     alarmsSettings.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-    System.out.println(alarmsSettings.toString());
     return alarmsSettings;
   }
 
@@ -269,7 +324,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       }
     }
     ventilationSettings.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-    logger.info(ventilationSettings.toString());
     return ventilationSettings;
   }
 
@@ -311,7 +365,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       }
     }
     status.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-    logger.info(status.toString());
     return status;
   }
 
@@ -350,7 +403,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       double value = var.getValue().doubleValue();
       String code =
           var.getCode().replaceAll(" ", "_").replaceAll("/", "_").toLowerCase();
-      logger.info(code);
       if (code.equals("ppeak")) {
         measure.setPpeak(value);
       } else if (code.equals("vte")) {
@@ -380,7 +432,6 @@ public class DeviceResourceProvider implements IResourceProvider {
       }
     }
     measure.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-    logger.info(measure.toString());
     return measure;
   }
 }

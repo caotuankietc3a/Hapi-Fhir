@@ -16,6 +16,12 @@ public class VentilationSettings {
   @Column(name = "Ventilation_settings_id")
   private Integer ventilationSettingsId;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumns({
+    @JoinColumn(name = "device_id"), @JoinColumn(name = "device_name")
+  })
+  private Device device;
+
   @Column(name = "VT") private Double vt;
 
   @Column(name = "RR") private Double rr;
@@ -86,7 +92,5 @@ public class VentilationSettings {
 
   @Column(name = "Peak_flow") private Double peakFlow;
 
-  @Column(name = "Created_at", nullable = false,
-          columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private Timestamp createdAt;
+  @Column(name = "Created_at", nullable = false) private Timestamp createdAt;
 }

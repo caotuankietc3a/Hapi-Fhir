@@ -17,6 +17,12 @@ public class AlarmsSettings {
   @Column(name = "Alarm_settings_id")
   private Integer alarmSettingsId;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumns({
+    @JoinColumn(name = "device_id"), @JoinColumn(name = "device_name")
+  })
+  private Device device;
+
   @Column(name = "Ppeak") private Double ppeak;
 
   @Column(name = "VTiMin") private Double vtiMin;
@@ -57,7 +63,5 @@ public class AlarmsSettings {
 
   @Column(name = "FreqCTMax") private Double freqCTMax;
 
-  @Column(name = "Created_at", nullable = false,
-          columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private Timestamp createdAt;
+  @Column(name = "Created_at", nullable = false) private Timestamp createdAt;
 }

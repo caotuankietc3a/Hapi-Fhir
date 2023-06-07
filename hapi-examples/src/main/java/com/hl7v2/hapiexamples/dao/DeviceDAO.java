@@ -15,7 +15,7 @@ public class DeviceDAO {
   public void save(Device device) {
     try (Session session = this.sessionFactory.openSession()) {
       Transaction tx = session.beginTransaction();
-      session.persist(device);
+      session.saveOrUpdate(device);
       tx.commit();
     } catch (Exception e) {
       System.err.println(e.getMessage());

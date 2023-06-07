@@ -2,7 +2,6 @@ package com.hl7v2.hapiexamples.model;
 
 import jakarta.persistence.*;
 import java.sql.Timestamp;
-import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +18,12 @@ public class Measure {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Measure_id")
   private Integer measureId;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumns({
+    @JoinColumn(name = "device_id"), @JoinColumn(name = "device_name")
+  })
+  private Device device;
 
   @Column(name = "Ppeak") private Double ppeak;
 
@@ -46,7 +51,5 @@ public class Measure {
 
   @Column(name = "etCO2") private Double etCO2;
 
-  @Column(name = "Created_at",
-          columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private Timestamp createdAt;
+  @Column(name = "Created_at", nullable = false) private Timestamp createdAt;
 }

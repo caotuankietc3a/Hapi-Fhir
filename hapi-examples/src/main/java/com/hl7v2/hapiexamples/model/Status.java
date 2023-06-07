@@ -15,6 +15,12 @@ public class Status {
   @Column(name = "Status_id")
   private Integer statusId;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumns({
+    @JoinColumn(name = "device_id"), @JoinColumn(name = "device_name")
+  })
+  private Device device;
+
   @Column(name = "PatientType") private Integer patientType;
 
   @Column(name = "VentilatorMode") private Integer ventilatorMode;
@@ -33,7 +39,5 @@ public class Status {
 
   @Column(name = "CO2Sensor") private Integer co2Sensor;
 
-  @Column(name = "Created_at", nullable = false,
-          columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  private Timestamp createdAt;
+  @Column(name = "Created_at", nullable = false) private Timestamp createdAt;
 }
