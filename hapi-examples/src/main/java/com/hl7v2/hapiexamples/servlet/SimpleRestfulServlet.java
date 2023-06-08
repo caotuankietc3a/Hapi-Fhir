@@ -28,7 +28,7 @@ public class SimpleRestfulServlet extends RestfulServer {
     registerInterceptor(loggingInterceptor);
 
     // The SLF4j logger "test.accesslog" will receive the logging events
-    loggingInterceptor.setLoggerName("test.accesslog");
+    loggingInterceptor.setLoggerName("access.log");
 
     // This is the format for each line. A number of substitution variables may
     // be used here. See the JavaDoc for LoggingInterceptor for information on

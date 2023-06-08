@@ -4,9 +4,11 @@
   <property name="FLUENTD_HOST" value="${FLUENTD_HOST:-localhost}" />
   <property name="FLUENTD_PORT" value="${FLUENTD_PORT:-24224}" />
   <appender name="FLUENT" class="ch.qos.logback.more.appenders.DataFluentAppender">
+    <tag>access.log</tag>
     <label>@NORMAL</label>
     <remoteHost>${FLUENTD_HOST}</remoteHost>
     <port>${FLUENTD_PORT}</port>
+    <maxQueueSize>20</maxQueueSize>
   </appender>
   <appender name="JsonConsole" class="ch.qos.logback.core.ConsoleAppender">
     <encoder class="net.logstash.logback.encoder.LogstashEncoder">

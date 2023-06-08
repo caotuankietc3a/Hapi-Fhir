@@ -214,20 +214,25 @@ services:
     ports:
       - "24224:24224"
       - "24224:24224/udp"
+      # - "24225:24225"
+      # - "24225:24225/udp"
     depends_on:
       - elasticsearch
     links: # Sends incoming logs to the elasticsearch container.
       - elasticsearch
   postgres:
-    image: debezium/example-postgres
+    # image: debezium/example-postgres
+    # image: debezium/postgres
+    image: postgres:14.8
     container_name: postgres
     restart: always
     ports:
-      - 5433:5432
+      - 5432:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=hapi-fhir
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - postgresdb:/var/lib/postgresql/data
 volumes:

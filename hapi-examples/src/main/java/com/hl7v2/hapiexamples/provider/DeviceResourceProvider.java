@@ -42,7 +42,7 @@ public class DeviceResourceProvider implements IResourceProvider {
   private static final FhirContext fhirContext = FhirContext.forR4();
   private static final String FLUENTD_HOST = "localhost";
   private static final int FLUENTD_PORT = 24224;
-  private static final String FLUENTD_TAG = "service.log";
+  private static final String FLUENTD_TAG = "device.data.log";
 
   private static final Logger logger =
       LoggerFactory.getLogger(DeviceResourceProvider.class);
@@ -66,12 +66,12 @@ public class DeviceResourceProvider implements IResourceProvider {
                               @ConditionalUrlParam String theConditionalUrl) {
     // if (theConditionalUrl != null) {
     //   System.out.println(theConditionalUrl.split("&").toString());
-    createDeviceBasedOnConditionalUrl(device);
+    // createDeviceBasedOnConditionalUrl(device);
     // } else {
     //   createDeviceNormally(device);
     // }
 
-    // createDeviceNormally(device);
+    createDeviceNormally(device);
 
     Integer id = devices.size() + 1;
     devices.put(id, device);
@@ -98,54 +98,58 @@ public class DeviceResourceProvider implements IResourceProvider {
         device);
     // int measureId = 1, statusId = 1, ventilationSettingsId = 1,
     //     alarmsSettingsId = 1;
+    boolean dbSave = false;
 
     com.hl7v2.hapiexamples.model.Device mDevice =
         generateDevice(device.getDistinctIdentifier());
-    saveDevice(mDevice);
+    if (dbSave) {
+      saveDevice(mDevice);
+    }
 
     for (DevicePropertyComponent prop : device.getProperty()) {
       String type = prop.getType().getCoding().get(0).getCode();
 
-      // recordLogs(device.getDistinctIdentifier(), type,
-      // prop.getValueQuantity());
+      recordLogs(device.getDistinctIdentifier(), type, prop.getValueQuantity());
 
-      if (type.equals("measures")) {
-        try {
-          Measure measure = generateMeasure(prop.getValueQuantity());
-          measure.setDevice(mDevice);
-          mDevice.getMeasures().add(measure);
-          saveMeasure(measure);
-        } catch (Exception e) {
-          logger.error(e.getMessage());
-        }
-      } else if (type.equals("status")) {
-        try {
-          Status status = generateStatus(prop.getValueQuantity());
-          status.setDevice(mDevice);
-          mDevice.getStatus().add(status);
-          saveStatus(status);
-        } catch (Exception e) {
-          logger.error(e.getMessage());
-        }
-      } else if (type.equals("ventilation settings")) {
-        try {
-          VentilationSettings ventilationSettings =
-              generateventilationSettings(prop.getValueQuantity());
-          ventilationSettings.setDevice(mDevice);
-          mDevice.getVentilationSettings().add(ventilationSettings);
-          saveVentilationSettings(ventilationSettings);
-        } catch (Exception e) {
-          logger.error(e.getMessage());
-        }
-      } else if (type.equals("alarms settings")) {
-        try {
-          AlarmsSettings alarmsSettings =
-              generateAlarmsSettings(prop.getValueQuantity());
-          alarmsSettings.setDevice(mDevice);
-          mDevice.getAlarmsSettings().add(alarmsSettings);
-          saveAlarmsSettings(alarmsSettings);
-        } catch (Exception e) {
-          logger.error(e.getMessage());
+      if (dbSave) {
+        if (type.equals("measures")) {
+          try {
+            Measure measure = generateMeasure(prop.getValueQuantity());
+            measure.setDevice(mDevice);
+            mDevice.getMeasures().add(measure);
+            saveMeasure(measure);
+          } catch (Exception e) {
+            logger.error(e.getMessage());
+          }
+        } else if (type.equals("status")) {
+          try {
+            Status status = generateStatus(prop.getValueQuantity());
+            status.setDevice(mDevice);
+            mDevice.getStatus().add(status);
+            saveStatus(status);
+          } catch (Exception e) {
+            logger.error(e.getMessage());
+          }
+        } else if (type.equals("ventilation settings")) {
+          try {
+            VentilationSettings ventilationSettings =
+                generateventilationSettings(prop.getValueQuantity());
+            ventilationSettings.setDevice(mDevice);
+            mDevice.getVentilationSettings().add(ventilationSettings);
+            saveVentilationSettings(ventilationSettings);
+          } catch (Exception e) {
+            logger.error(e.getMessage());
+          }
+        } else if (type.equals("alarms settings")) {
+          try {
+            AlarmsSettings alarmsSettings =
+                generateAlarmsSettings(prop.getValueQuantity());
+            alarmsSettings.setDevice(mDevice);
+            mDevice.getAlarmsSettings().add(alarmsSettings);
+            saveAlarmsSettings(alarmsSettings);
+          } catch (Exception e) {
+            logger.error(e.getMessage());
+          }
         }
       }
     }
@@ -382,7 +386,8 @@ public class DeviceResourceProvider implements IResourceProvider {
       logKeyValue2.put(code + "__unit", unit);
     }
 
-    logger.info("LOG " + type.toUpperCase() + " DEVICE", entries(logKeyValue2));
+    // logger.info("LOG " + type.toUpperCase() + " DEVICE",
+    // entries(logKeyValue2));
 
     fluent_logger.log("@NORMAL", logKeyValue2);
   }

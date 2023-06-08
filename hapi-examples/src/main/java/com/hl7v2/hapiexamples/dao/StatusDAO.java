@@ -1,6 +1,7 @@
 package com.hl7v2.hapiexamples.dao;
 
 import com.hl7v2.hapiexamples.model.Status;
+import java.util.TimeZone;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,7 +14,9 @@ public class StatusDAO {
   }
 
   public void save(Status status) {
-    try (Session session = this.sessionFactory.openSession()) {
+    try (Session session = this.sessionFactory.withOptions()
+                               .jdbcTimeZone(TimeZone.getTimeZone("UTC"))
+                               .openSession()) {
       Transaction tx = session.beginTransaction();
       session.persist(status);
       tx.commit();
