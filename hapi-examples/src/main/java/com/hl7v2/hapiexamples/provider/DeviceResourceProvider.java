@@ -96,9 +96,7 @@ public class DeviceResourceProvider implements IResourceProvider {
 
     fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(
         device);
-    // int measureId = 1, statusId = 1, ventilationSettingsId = 1,
-    //     alarmsSettingsId = 1;
-    boolean dbSave = false;
+    boolean dbSave = true;
 
     com.hl7v2.hapiexamples.model.Device mDevice =
         generateDevice(device.getDistinctIdentifier());
