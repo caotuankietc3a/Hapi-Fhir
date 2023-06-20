@@ -7,35 +7,57 @@ metricbeat.autodiscover:
     - type: docker
       # https://www.elastic.co/guide/en/beats/metricbeat/current/configuration-autodiscover-hints.html
       hints.enabled: true
+metricbeat.config.modules:
+  path: ./modules.d/*.yml
 metricbeat.modules:
-  #------------------------------- System Module -------------------------------
-  - module: system
-    metricsets: ["cpu", "load", "memory", "network", "process", "process_summary",
-      "core", "diskio", "socket"]
-    processes: [".*"]
-    process.include_top_n:
-      by_cpu: 5
-      by_memory: 5
-    period: 10s
-    cpu.metrics: ["percentages"]
-    core.metrics: ["percentages"]
-  - module: system
-    period: 1m
+  # #------------------------------- System Module -------------------------------
+  # - module: system
+  #   metricsets: ["cpu", "load", "memory", "network", "process", "process_summary",
+  #     "core", "diskio", "socket"]
+  #   processes: [".*"]
+  #   process.include_top_n:
+  #     by_cpu: 5
+  #     by_memory: 5
+  #   period: 10s
+  #   cpu.metrics: ["percentages"]
+  #   core.metrics: ["percentages"]
+  # - module: system
+  #   period: 1m
+  #   metricsets:
+  #     - filesystem
+  #     - fsstat
+  #   processors:
+  #     - drop_event.when.regexp:
+  #         system.filesystem.mount_point: "^/(sys|cgroup|proc|dev|etc|host|lib)($|/)"
+  # - module: system
+  #   period: 15m
+  #   metricsets:
+  #     - uptime
+  # #------------------------------- Docker Module -------------------------------
+  # - module: docker
+  #   metricsets: ["container", "cpu", "diskio", "healthcheck", "info", "memory", "network"]
+  #   hosts: ["unix:///var/run/docker.sock"]
+  #   period: 10s
+
+  #------------------------------- Postgres Module -------------------------------
+  - module: postgresql
+    enabled: true
     metricsets:
-      - filesystem
-      - fsstat
-    processors:
-      - drop_event.when.regexp:
-          system.filesystem.mount_point: "^/(sys|cgroup|proc|dev|etc|host|lib)($|/)"
-  - module: system
-    period: 15m
-    metricsets:
-      - uptime
-  #------------------------------- Docker Module -------------------------------
-  - module: docker
-    metricsets: ["container", "cpu", "diskio", "healthcheck", "info", "memory", "network"]
-    hosts: ["unix:///var/run/docker.sock"]
-    period: 10s
+      # Stats about every PostgreSQL database
+      - database
+      # Stats about the background writer process's activity
+      - bgwriter
+      # Stats about every PostgreSQL process
+      - activity
+      # Stats about every statement executed in the server. It requires the
+      # `pg_stats_statement` library to be configured in the server.
+      - statement
+    period: 2s
+    hosts: ["postgres://postgres:5432?sslmode=disable"]
+    # Username to use when connecting to PostgreSQL. Empty by default.
+    username: "postgres"
+    # Password to use when connecting to PostgreSQL. Empty by default.
+    password: "postgres"
 processors:
   - add_cloud_metadata: ~
   - add_docker_metadata: ~
@@ -45,15 +67,21 @@ processors:
       netinfo.enabled: true
 #========================== Elasticsearch output ===============================
 output.elasticsearch:
-  hosts: ["${ELASTICSEARCH_HOST}:9200"]
+  hosts: ["elasticsearch:9200"]
 #============================== Dashboards =====================================
 setup.dashboards:
   enabled: true
 #============================== Kibana =========================================
 setup.kibana:
-  host: "${KIBANA_HOST}:5601"
-  protocol: "http"
+  host: "kibana:5601"
 #============================== Xpack Monitoring ===============================
 xpack.monitoring:
   enabled: true
   elasticsearch:
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/metricbeat
+  name: metricbeat
+  keepfiles: 7
+  permissions: 0640

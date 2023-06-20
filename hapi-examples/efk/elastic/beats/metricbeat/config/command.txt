@@ -1,0 +1,6 @@
+apt install nano
+metricbeat modules enable postgresql
+metricbeat setup
+metricbeat test config
+metricbeat test output
+metricbeat test modules postgresql
