@@ -1,0 +1,63 @@
+PUT _ingest/pipeline/filebeat_pipeline
+{
+    "processors": [
+    {
+      "grok": {
+        "field": "message",
+        "patterns": ["%{SYSLOGTIMESTAMP:uploaded_time}.*", ".*"],
+        "ignore_missing": true
+      }
+    },
+    {
+      "script": {
+        "description": "Override @timestamp for uploaded_time",
+        "lang": "painless",
+        "source": """
+          if (!ctx.containsKey('uploaded_time')) {
+            long datenow = new Date().getTime();
+            Instant instant = Instant.ofEpochMilli(datenow);
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, ZoneId.of('Z'));
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd'T'HH:mm:ss.SSS'Z'");
+            String datetime = zdt.format(dtf);
+            ctx['uploaded_time'] = datetime;
+          }
+        """
+      }
+    },
+    {
+      "date" : {
+        "field" : "uploaded_time",
+        "target_field" : "@timestamp",
+        "formats" : ["ISO8601", "UNIX", "UNIX_MS", "TAI64N", "MMM d HH:mm:ss"],
+        "timezone" : "Z"
+      }
+    },
+    {
+      "remove": {
+        "field": "uploaded_time"
+      }
+    }
+  ]
+}
+
+
+POST _ingest/pipeline/filebeat_pipeline/_simulate
+{
+  "docs": [
+    {
+      "_source": {
+        "message": "caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)"
+      }
+
+    },{
+      "_source": {
+        "message": "Jun 18 07:07:44 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)"
+      }
+    }
+    ,{
+      "_source": {
+        "message": "Jun 21 18:13:54 caparies sudo: caparies : TTY=pts/4 ; PWD=/home/caparies/Desktop/Hapi-Fhir/hapi-examples ; USER=root ; COMMAND=/usr/bin/chown root efk/elastic/beats/filebeat/config/filebeat.yml"
+      }
+    }
+  ]
+}
