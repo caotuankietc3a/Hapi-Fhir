@@ -67,13 +67,13 @@ processors:
       netinfo.enabled: true
 #========================== Elasticsearch output ===============================
 output.elasticsearch:
-  hosts: ["elasticsearch:9200"]
+  hosts: ["${ELASTICSEARCH_HOST}:9200"]
 #============================== Dashboards =====================================
 setup.dashboards:
   enabled: true
 #============================== Kibana =========================================
 setup.kibana:
-  host: "kibana:5601"
+  host: "${KIBANA_HOST}:5601"
 #============================== Xpack Monitoring ===============================
 xpack.monitoring:
   enabled: true
