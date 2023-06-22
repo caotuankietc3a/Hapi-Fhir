@@ -1,0 +1,23 @@
+caparies systemd-logind[956]: System is powering down.
+caparies systemd-logind[940]: Watching system buttons on /dev/input/event3 (Power Button)
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event2 (Power Button)
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event1 (Sleep Button)
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event7 (Compx 2.4G Receiver)
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching TESt system buttons on /dev/input/event10 (Compx 2.4G Receiver Consumer Control)
+
+Jun 22 09:01:51 caparies sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Jun 22 09:01:51 caparies sudo: pam_unix(sudo:session): session closed for user root
+Jun 22 09:09:01 caparies CRON[17664]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Jun 22 09:09:01 caparies CRON[17664]: pam_unix(cron:session): session closed for user root
+
+
+Jun 22 10:19:01 caparies CRON[17664]: pam_unix(cron:session): session closed for user root TESTTTTTTTTTTTTt
+
+caparies CRON[17664]: pam_unix(cron:session): session closed for user root TESTTTTTTTTTTTTt
+
+Jun 22 10:19:01 caparies CRON[17664]: pam_unix(cron:session): session closed for user root TESTTTTTTTTTTTTt
+
+Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event0 (Lid Switch)"

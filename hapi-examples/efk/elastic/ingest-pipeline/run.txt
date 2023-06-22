@@ -1,3 +1,1245 @@
+PUT place
+{
+  "mappings": {
+    "properties": {
+      "suggest": {
+        "type": "completion",
+        "contexts": [
+          {                                 
+            "name": "place_type",
+            "type": "category"
+          },
+          {                                 
+            "name": "location",
+            "type": "geo",
+            "precision": 4
+          }
+        ]
+      }
+    }
+  }
+}
+PUT place_path_category
+{
+  "mappings": {
+    "properties": {
+      "suggest": {
+        "type": "completion",
+        "contexts": [
+          {                           
+            "name": "place_type",
+            "type": "category",
+            "path": "cat"
+          },
+          {                           
+            "name": "location",
+            "type": "geo",
+            "precision": 4,
+            "path": "loc"
+          }
+        ]
+      },
+      "loc": {
+        "type": "geo_point"
+      }
+    }
+  }
+}
+
+PUT place/_doc/1
+{
+  "suggest": {
+    "input": [ "timmy's", "starbucks", "dunkin donuts" ],
+    "contexts": {
+      "place_type": [ "cafe", "food" ]                    
+    }
+  }
+}
+
+PUT place_path_category/_doc/1
+{
+  "suggest": ["timmy's", "starbucks", "dunkin donuts"],
+  "cat": ["cafe", "food"] 
+}
+
+
+POST place/_search?pretty
+{
+  "suggest": {
+    "place_suggestion": {
+      "prefix": "ti*",
+      "completion": {
+        "field": "suggest",
+        "size": 10,
+        "contexts": {
+          "place_type": [ "cafe", "restaurants" ]
+        }
+      }
+    }
+  }
+}
+
+GET links/_search
+{
+  "query": {
+    "term": {
+      "url.keyword": {
+        "value": "https://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm"
+      }
+    }
+  }
+}
+GET links/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "distance_feature": {
+            "field": "created_at",
+            "origin": "now",
+            "pivot": "7d"
+          }
+        }
+      ],
+      "must": [
+        {
+          "multi_match" : {
+            "query":    "into", 
+            "fields": [ "description",  "title"] 
+          }
+        }
+      ]
+    }
+
+  }
+}
+
+GET links/_search
+GET links/_settings
+GET links/_mapping
+GET links/_analyze
+{
+  "field": "title.suggestion",
+  "text": ["Term Query"]
+}
+
+POST links/_search
+{
+  "suggest": {
+  "text" : "elastoc introductton",
+  "suggest_phrase" : {
+    "phrase" : {
+      "field" : "title",
+      "size" : 5,
+      "direct_generator": [ {
+        "field": "title.suggestion",
+        "suggest_mode": "always",
+        "pre_filter" : "index_analizer"
+      } ]      ,  "highlight": {
+          "pre_tag": "<em>",
+          "post_tag": "</em>"
+        }
+    }
+  }
+}
+}
+
+
+
+POST links/_search
+{
+  "suggest": {
+  "text" : "elasto introductton",
+  "suggest_term" : {
+    "term" : {
+      "field" : "title",
+      "size" : 5}
+  }
+}
+}
+GET links/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "logging for",
+      "type": "bool_prefix",
+      "fields": [
+        "title",
+        "title._2gram",
+        "title._3gram"
+      ]
+    }
+  }
+}
+GET links/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "logging",
+      "type": "phrase_prefix",
+      "fields": [
+        "title",
+        "title._2gram",
+        "title._3gram"
+      ]
+    }
+  }
+}
+GET links/_search
+{
+  "query": {
+    "match_phrase_prefix": {
+      "title": "loggin"
+    }
+  }
+}
+
+GET _analyze
+{
+  "tokenizer": "standard",
+  "filter": [
+    { "type": "edge_ngram",
+      "min_gram": 1
+    }
+  ],
+  "text": "the quick brown fox jumps"
+}
+
+PUT my-index-000001
+{
+  "mappings": {
+    "properties": {
+      "my_field": {
+        "type": "search_as_you_type"
+      }
+    }
+  }
+}
+
+GET my-index-000001/_mapping
+
+PUT my-index-000001/_doc/1?refresh
+{
+  "my_field": "quick brown fox jump lazy dog"
+}
+
+PUT my-index-000001/_doc/2?refresh
+{
+  "my_field": "quock brown fox jump lazy dog"
+}
+PUT my-index-000001/_doc/1?refresh
+{
+  "my_field": "quick brown fox jump lazy dog"
+}
+
+PUT my-index-000001/_doc/1?refresh
+{
+  "my_field": "quick brown fox jump lazy dog"
+}
+PUT my-index-000001/_doc/1?refresh
+{
+  "my_field": "quick brown fox jump lazy dog"
+}
+
+
+
+POST my-index-000001/_analyze
+{
+  "field": "my_field",
+  "text": ["quick brown fox jump lazy Dog??"]
+}
+
+GET my-index-000001/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "qu b f",
+      "type": "bool_prefix",
+      "fields": [
+        "my_field",
+        "my_field._2gram",
+        "my_field._3gram"
+      ]
+    }
+  }
+}
+
+DELETE my-index-000001
+
+
+PUT my-index-000001
+{
+  "mappings": {
+    "properties": { 
+      "manager": {
+        "properties": { 
+          "age":  { "type": "integer" },
+          "name": { "type": "text"  }
+        }
+      },
+      "employees": {
+        "type": "nested",
+        "properties": { 
+          "age":  { "type": "integer" },
+          "name": { "type": "text"  }
+        }
+      }
+    }
+  }
+}
+
+
+PUT my-index-000001/_doc/1 
+{
+  "region": "US",
+  "manager": {
+    "name": "Alice White",
+    "age": 30
+  },
+  "employees": [
+    {
+      "name": "John Smith",
+      "age": 34
+    },
+    {
+      "name": "Peter Brown",
+      "age": 26
+    }
+  ]
+}
+
+GET postgres_debezium_pg_topic_device/_search
+{
+  "query": {
+    "term": {
+      "device_name.keyword": {
+        "value": "teeeeeeee"
+      }
+    }
+  }
+}
+GET postgres_debezium_pg_topic_device/_search
+DELETE postgres_debezium_pg_topic_device
+DELETE postgres_debezium_pg_topic_measure
+DELETE postgres_debezium_pg_topic_ventilationsettings
+DELETE postgres_debezium_pg_topic_status
+DELETE postgres_debezium_pg_topic_alarmssettings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PUT links
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "attributes":{
+        "type": "nested",
+        "properties": {
+          "name":{
+            "type": "keyword"
+          },
+          "value": {
+            "type": "text",
+            "fields":{
+              "keyword":{
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+POST links/_doc/1
+{
+  "title": "OpenAI",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Artificial Intelligence"
+    },
+    {
+      "name": "Website",
+      "value": "https://openai.com"
+    }
+  ]
+}
+
+POST links/_doc/2
+{
+  "title": "Wikipedia",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Online Encyclopedia"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.wikipedia.org"
+    }
+  ]
+}
+
+POST links/_doc/3
+{
+  "title": "Amazon",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "E-commerce"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.amazon.com"
+    }
+  ]
+}
+
+POST links/_doc/4
+{
+  "title": "Netflix",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Streaming Service"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.netflix.com"
+    }
+  ]
+}
+
+
+POST links/_doc/5
+{
+  "title": "GitHub",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Version Control"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.github.com"
+    }
+  ]
+}
+
+
+POST links/_doc/6
+{
+  "title": "Twitter",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Social Media"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.twitter.com"
+    }
+  ]
+}
+
+
+POST links/_doc/7
+{
+  "title": "LinkedIn",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Professional Networking"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.linkedin.com"
+    }
+  ]
+}
+
+
+POST links/_doc/8
+{
+  "title": "YouTube",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Video Sharing"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.youtube.com"
+    }
+  ]
+}
+
+
+POST links/_doc/9
+{
+  "title": "Reddit",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Discussion Forum"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.reddit.com"
+    }
+  ]
+}
+
+
+POST links/_doc/10
+{
+  "title": "Instagram",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Photo Sharing"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.instagram.com"
+    }
+  ]
+}
+
+POST links/_doc/11
+{
+  "title": "Instagram-1",
+  "attributes": [
+    {
+      "name": "Category-1",
+      "value": "Photo Sharing 1"
+    },
+    {
+      "name": "Website-1",
+      "value": "https://www.instagram-1.com"
+    }
+  ]
+}
+
+
+POST links/_doc/12
+{
+  "title": "Reddit-1",
+  "attributes": [
+    {
+      "name": "Category-1",
+      "value": "Discussion Forum 1"
+    },
+    {
+      "name": "Website-1",
+      "value": "https://www.reddit-1.com"
+    }
+  ]
+}
+
+POST links/_doc/13
+{
+  "title": "Reddit-1",
+  "attributes": [
+    {
+      "name": "Category",
+      "value": "Discussion Forum"
+    },
+    {
+      "name": "Website",
+      "value": "https://www.reddit.com"
+    }
+  ]
+}
+
+GET links/_search
+{
+  "query": {
+    "nested": {
+      "path": "attributes",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "attributes.name": {
+                  "value": "Category"
+                }
+              }
+            },{
+              "wildcard": {
+                  "attributes.value.keyword": {
+                    "value": "Photo Shar*"
+                  }
+              }
+            }
+
+          ]
+        }
+      }
+    }
+  }
+}
+GET links/_search
+GET links/_search
+{
+  "query": {
+    "nested": {
+      "path": "attributes",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "attributes.name": {
+                  "value": "Category"
+                }
+              }
+            },
+            {
+              "terms": {
+                "attributes.value.keyword": [
+                  "Video Sharing",
+                  "Professional Networking"
+                ]
+              }
+            }
+
+          ]
+        }
+      }
+    }
+  }
+}
+
+
+GET links/_search
+{
+  "query": {
+    "nested": {
+      "path": "attributes",
+      "query": {
+        "bool": {
+        "should": [
+          {
+
+              "bool": {
+                "must": [
+                  {
+                    "term": {
+                      "attributes.name": {
+                        "value": "Category"
+                      }
+                    }
+                  },
+                  {
+                    "terms": {
+                      "attributes.value.keyword": [
+                        "Video Sharing",
+                        "Professional Networking"
+                      ]
+                    }
+                  }
+      
+                ]
+              }
+        
+          },
+          {
+
+              "bool": {
+                "must": [
+                  {
+                    "term": {
+                      "attributes.name": {
+                        "value": "Category-1"
+                      }
+                    }
+                  },
+                  {
+                    "terms": {
+                      "attributes.value.keyword": [
+                        "Photo Sharing 1",
+                        "Discussion Forum 1"
+                      ]
+                    }
+                  }
+      
+                ]
+              }
+            
+          }
+        ]
+          
+        }
+      }
+    }
+  }
+}
+
+
+
+GET links/_search
+{
+  "query": {
+    "nested": {
+      "path": "attributes",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "attributes.name": {
+                  "value": "Category"
+                }
+              }
+            }],
+            "should": [
+              { "match": {
+                "attributes.value": "Web*"
+              }}
+            ]
+        }
+      }
+    }
+  }
+}
+
+GET links/_search
+
+
+GET links/_search
+{
+  "size": 0,
+  "aggs": {
+    "attributes-facets": {
+      "nested": {
+        "path": "attributes"
+      },
+      "aggs": {
+        "attribute-per-term": {
+          "terms": {
+            "field": "attributes.name",
+            "size": 10
+          },
+          "aggs": {
+            "value-per-attribute-term": {
+              "terms": {
+                "field": "attributes.value.keyword",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET links/_search
+{
+  "size": 0,
+  "aggs": {
+    "attributes-facets": {
+      "nested": {
+        "path": "attributes"
+      },
+      "aggs": {
+        "value-per-attribute-term": {
+          "terms": {
+            "field": "attributes.value.keyword",
+            "size": 10
+          },
+          "aggs": {
+            "topHitsData": {
+              "top_hits": {
+                "size": 1,
+                "_source": {
+                  "includes": ["attributes.name"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET links/_search
+{
+  "size": 0,
+  "aggs": {
+    "attributes-facets": {
+      "nested": {
+        "path": "attributes"
+      },
+      "aggs": {
+        "value-per-attribute-term": {
+          "terms": {
+            "field": "attributes.value.keyword",
+            "size": 10
+          },
+          "fields": []
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+##################### TEST NESTED AGGREGATIONs ###################################
+PUT /products
+{
+  "mappings": {
+    "properties": {
+      "resellers": { 
+        "type": "nested",
+        "properties": {
+          "reseller": {
+            "type": "keyword"
+          },
+          "price": {
+            "type": "double"
+          }
+        }
+      }
+    }
+  }
+}
+
+PUT /products/_doc/0?refresh
+{
+  "name": "LED TV", 
+  "resellers": [
+    {
+      "reseller": "companyA",
+      "price": 350
+    },
+    {
+      "reseller": "companyB",
+      "price": 500
+    }
+  ]
+}
+PUT /products/_doc/1?refresh
+{
+  "name": "SAMSUNG TV", 
+  "resellers": [
+    {
+      "reseller": "companyA",
+      "price": 450
+    },
+    {
+      "reseller": "companyB",
+      "price": 600
+    }
+  ]
+}
+PUT /products/_doc/2?refresh
+{
+  "name": "MEGA TV", 
+  "resellers": [
+    {
+      "reseller": "companyA",
+      "price": 250
+    },
+    {
+      "reseller": "companyB",
+      "price": 300
+    }
+  ]
+}
+
+GET products/_search
+{
+  "size": 0,
+  "query": {
+    "match": {
+      "name.keyword": "LED TV"
+    }
+  },
+  "aggs": {
+    "resellers_facets": {
+      "nested": {
+        "path": "resellers"
+      },
+      "aggs": {
+        "min_price": {
+          "min": {
+            "field": "resellers.price"
+          }
+        }
+      }
+    }
+  }
+}
+GET products/_search
+{
+  "size": 0,
+  "aggs": {
+    "resellers_facets": {
+      "nested": {
+        "path": "resellers"
+      },
+      "aggs": {
+        "filter_reseller": {
+          "filter": {
+            "terms": {
+              "resellers.reseller": [
+                "companyA", "companyB"
+              ]
+            }
+          },
+          "aggs": {
+            "avg_price":{
+              "sum": {
+                "field": "resellers.price"
+              }
+            }
+          }
+        },
+        
+            "avg_price":{
+              "sum": {
+                "field": "resellers.price"
+              }
+            }
+      }
+    }
+  }
+}
+
+################################ TEST FLATTERNED FIELD ###############################
+PUT bug_reports
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "labels": {
+        "type": "flattened"
+      }
+    }
+  }
+}
+
+GET bug_reports/_mapping
+
+POST bug_reports/_doc/1
+{
+  "title": "Results are not sorted correctly.",
+  "labels": {
+    "priority": "urgent",
+    "release": ["v1.2.5", "v1.3.0"],
+    "timestamp": {
+      "created": 1541458026,
+      "closed": 1541457010
+    }
+  }
+}
+
+GET product-example/_search
+POST _reindex
+{
+  "source": {
+    "index": "product-test"
+  },
+  "dest": {
+    "index": "product-example"
+  }
+}
+
+DELETE product-test
+
+PUT product-example
+{
+  "mappings": {
+    "properties": {
+      "approve": {
+        "type": "integer"
+      },
+      "attributes": {
+        "type": "nested",
+        "properties": {
+          "name": {
+            "type": "keyword"
+          },
+          "value": {
+            "type": "keyword"
+          }
+        }
+      },
+      "categories": {
+        "properties": {
+          "layer1": {
+            "properties": {
+              "id": {
+                "type": "long"
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "layer2": {
+            "properties": {
+              "id": {
+                "type": "long"
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "layer3": {
+            "properties": {
+              "id": {
+                "type": "long"
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "layer4": {
+            "properties": {
+              "id": {
+                "type": "long"
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "createdDate": {
+        "type": "long"
+      },
+      "description": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "fkMerchant": {
+        "type": "long"
+      },
+      "fkUser": {
+        "type": "long"
+      },
+      "id": {
+        "type": "long"
+      },
+      "latestModifiedDate": {
+        "type": "long"
+      },
+      "prices": {
+        "type": "double"
+      },
+      "productType": {
+        "type": "long"
+      },
+      "tags": {
+        "type": "nested",
+        "properties": {
+          "id": {
+            "type": "long"
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "title": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          },
+          "suggest": {
+            "type": "search_as_you_type",
+            "doc_values": false,
+            "max_shingle_size": 3
+          }
+        }
+      }
+    }
+  }
+}
+
+
+GET product-example/_search
+{
+  "size": 2000,
+  "query": {
+    "wildcard": {
+      "categories.layer4.id": {
+        "value": "*"
+      }
+    }
+  }
+}
+
+
+
+GET product-example/_search
+{
+  "size": 0,
+  "query": {
+    "range": {
+      "prices": {
+        "gte": 10,
+        "lte": 100
+      }
+    }
+  },
+  "aggs": {
+    "rangePricesAggs": {
+      "range": {
+        "field": "prices",
+        "ranges": [
+          {
+            "from": 0,
+            "to": 100
+          },
+          {
+            "from": 100,
+            "to": 150
+          }
+        ]
+      }
+    }
+  }
+}
+
+GET product-example/_search
+{
+  "size": 0, 
+  "aggs": {
+    "categoriesLayer1Terms": {
+      "terms": {
+        "field": "categories.layer1.id",
+        "size": 20
+      },    
+      "aggs": {
+         "categoriesLayer2Terms": {
+            "terms": {
+            "field": "categories.layer2.id",
+            "size": 20
+            },
+            "aggs": {
+              "categoriesLayer3Terms": {
+                "terms": {
+                  "field": "categories.layer3.id",
+                  "size": 10
+                },
+                "aggs": {
+                  "categoriesLayer4Terms": {
+                    "terms": {
+                      "field": "categories.layer4.name.id",
+                      "size": 10
+                    }
+                  }
+                }
+                
+              }
+            }
+         }
+         
+      }
+    }
+  }
+}
+GET product-example/_mapping
+GET product-example/_search
+{
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc",
+        "format": "strict_date_optional_time_nanos"
+      }
+    }
+  ]
+}
+
+GET product-example/_search
+{
+  "sort": [
+    {
+      "prices": {
+        "order": "desc"
+      
+      }
+    }
+  ],
+  "_source": false
+}
+
+
+
 PUT _ingest/pipeline/filebeat_pipeline
 {
     "processors": [
@@ -13,14 +1255,25 @@ PUT _ingest/pipeline/filebeat_pipeline
         "description": "Override @timestamp for uploaded_time",
         "lang": "painless",
         "source": """
-          if (!ctx.containsKey('uploaded_time')) {
-            long datenow = new Date().getTime();
+          long datenow = new Date().getTime();
+          if (ctx.containsKey('uploaded_time')) {
+            String datetime = ctx['uploaded_time'];
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM dd HH:mm:ss", Locale.ENGLISH);
+            Date date = sdf.parse(datetime);
+            Calendar calendar = Calendar.getInstance();
+            int year = calendar.get(Calendar.YEAR);
+            calendar.setTime(date);
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.HOUR, calendar.get(Calendar.HOUR) - 7);
+            datenow = calendar.getTime().getTime();
+          }
             Instant instant = Instant.ofEpochMilli(datenow);
             ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, ZoneId.of('Z'));
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd'T'HH:mm:ss.SSS'Z'");
             String datetime = zdt.format(dtf);
             ctx['uploaded_time'] = datetime;
-          }
+          
+
         """
       }
     },
@@ -28,8 +1281,8 @@ PUT _ingest/pipeline/filebeat_pipeline
       "date" : {
         "field" : "uploaded_time",
         "target_field" : "@timestamp",
-        "formats" : ["ISO8601", "UNIX", "UNIX_MS", "TAI64N", "MMM d HH:mm:ss"],
-        "timezone" : "Z"
+        "formats" : ["ISO8601", "UNIX", "UNIX_MS", "TAI64N"],
+        "timezone" : "UTC"
       }
     },
     {
@@ -39,6 +1292,76 @@ PUT _ingest/pipeline/filebeat_pipeline
     }
   ]
 }
+
+
+POST _ingest/pipeline/filebeat_pipeline/_simulate
+{
+  "docs": [
+    {
+      "_source": {
+        "message": "caparies gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)"
+      }
+
+    },{
+      "_source": {
+        "message": "Jun 18 07:07:44 caparies systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)"
+      }
+    }
+    ,{
+      "_source": {
+        "message": "Jun 5 05:36:58 caparies systemd-logind[940]: Watching system buttons on /dev/input/event0 (Lid Switch)"
+      }
+    }
+  ]
+}
+
+
+
+GET .ds-filebeat-8.7.1-2023.06.20-000001/_search
+{
+  "sort": [
+    {
+      "log.offset": {
+        "order": "desc"
+      }
+    }
+  ],
+  "query": {
+    "match": {
+      "log.file.path": "/usr/share/filebeat/test.log"
+    }
+  },
+  "fields": [
+    "@timestamp"
+  ],
+  "_source": false
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 POST _ingest/pipeline/filebeat_pipeline/_simulate
