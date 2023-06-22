@@ -1384,3 +1384,24 @@ POST _ingest/pipeline/filebeat_pipeline/_simulate
     }
   ]
 }
+
+
+GET .ds-filebeat-8.7.1-2023.06.20-000001/_search
+{
+  "sort": [
+    {
+      "log.offset": {
+        "order": "desc"
+      }
+    }
+  ],
+  "query": {
+    "match": {
+      "log.file.path": "/usr/share/filebeat/test.log"
+    }
+  },
+  "fields": [
+    "@timestamp"
+  ],
+  "_source": false
+}

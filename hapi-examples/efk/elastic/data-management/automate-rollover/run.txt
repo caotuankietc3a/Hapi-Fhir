@@ -1,0 +1,97 @@
+
+PUT _ilm/policy/my-lifecycle-policy
+{
+  "policy": {
+    "phases": {
+      "hot": {
+        "actions": {
+          "rollover": {
+            "max_primary_shard_size": "50gb"
+          }
+        }
+      },
+      "warm": {
+        "min_age": "30d",
+        "actions": {
+          "shrink": {
+            "number_of_shards": 1
+          },
+          "forcemerge": {
+            "max_num_segments": 1
+          }
+        }
+      },
+      "delete": {
+        "min_age": "100d",
+        "actions": {
+          "delete": {}
+        }
+      }
+    }
+  }
+}
+
+PUT _component_template/my-rollover-settings
+{
+  "template": {
+    "settings": {
+      "index.lifecycle.rollover_alias": "timeseries"
+    }
+  }
+}
+
+PUT _component_template/my-general-settings
+{
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 1
+    }
+  }
+}
+
+PUT _component_template/my-pipeline-settings
+{
+  "template": {
+    "settings": {
+      "index.default_pipeline": "test-pipeline"
+    }
+  }
+}
+
+PUT _component_template/my-settings-ilm-policy
+{
+  "template": {
+    "settings": {
+      "index.lifecycle.name": "my-lifecycle-policy"
+    }
+  }
+}
+
+PUT _index_template/timeseries_template
+{
+  "index_patterns": ["timeseries*"],
+  "data_stream": {},
+  "composed_of": ["my-pipeline-settings", "my-general-settings", "my-rollover-settings", "my-settings-ilm-policy"],
+  "priority": 301
+}
+
+
+PUT timeseries-000001
+{
+  "aliases": {
+    "timeseries": {
+      "is_write_index": true
+    }
+  }
+}
+
+POST timeseries/_doc
+{
+  "message": "212.87.37.154 - - [05/May/2099:16:21:15 +0000] \"GET /favicon.ico HTTP/1.1\" 200 3638 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36\""
+}
+GET timeseries
+
+GET timeseries-*/_ilm/explain
+
+GET _cat/indices
