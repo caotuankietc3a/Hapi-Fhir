@@ -1,0 +1,128 @@
+DELETE product-example-test
+
+
+POST _bulk
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 1", "remaining_amount": 800, "sales": 10, "product_tag": "Tag 1", "product_variant": { "color": "Red", "size": "Medium" }, "product_category": { "layer1": { "id": 1, "name": "Category 1" }, "layer2": { "id": 2, "name": "Category 2" } } }
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 2", "remaining_amount": 10, "sales": 100, "product_tag": "Tag 2", "product_variant": { "color": "Blue", "size": "Small" }, "product_category": { "layer1": { "id": 3, "name": "Category 3" }, "layer2": { "id": 4, "name": "Category 4" } } }
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 3", "remaining_amount": 80, "sales": 80, "product_tag": "Tag 3", "product_variant": { "color": "Green", "size": "Large" }, "product_category": { "layer1": { "id": 1, "name": "Category 1" }, "layer2": { "id": 5, "name": "Category 5" }, "layer3": { "id": 6, "name": "Category 6" } } }
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 4", "remaining_amount": 20, "sales": 10, "product_tag": "Tag 4", "product_variant": { "color": "Black", "size": "Large" }, "product_category": { "layer1": { "id": 7, "name": "Category 7" }, "layer2": { "id": 8, "name": "Category 8" } } }
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 5", "remaining_amount": 150, "sales": 160, "product_tag": "Tag 5", "product_variant": { "color": "Yellow", "size": "Medium" }, "product_category": { "layer1": { "id": 9, "name": "Category 9" }, "layer2": { "id": 10, "name": "Category 10" }, "layer3": { "id": 11, "name": "Category 11" } } }
+{ "index": { "_index": "product-example-test" } }
+{ "product_name": "Product 6", "remaining_amount": 15, "sales": 880, "product_tag": "Tag 6", "product_variant": { "color": "Purple", "size": "Small" }, "product_category": { "layer1": { "id": 12, "name": "Category 12" }, "layer2": { "id": 13, "name": "Category 13" } } }
+
+
+
+GET product-example-test/_search?explain=true
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "match": {
+          "product_name": "product"
+        }
+      },
+      "functions": [
+        {
+          "field_value_factor": {
+            "field": "remaining_amount",
+            "modifier": "log",
+            "factor": 1.1,
+            "missing": 1
+          }
+        },
+        {
+          "field_value_factor": {
+            "field": "sales",
+            "modifier": "log",
+            "factor": 1.3,
+            "missing": 1
+          }
+        }
+      ],
+      "score_mode": "multiply",
+      "boost_mode": "multiply"
+    }
+  }
+}
+
+GET product-example-test/_search?explain=true
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "match": {
+          "product_name": {
+            "query": "product",
+            "boost": 5
+          }
+        }
+      },
+      "functions": [
+        {
+          "filter": {
+            "term": {
+              "product_variant.color.keyword": "Purple"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "filter": {
+            "term": {
+              "product_tag.keyword": "Tag 2"
+            }
+          },
+          "weight": 2.5
+        },
+        {
+          "filter": {
+            "term": {
+              "product_category.layer1.name.keyword": "Category 12"
+            }
+          },
+          "weight": 1.5
+        }
+      ],
+      "score_mode": "multiply",
+      "boost_mode": "multiply"
+    }
+  }
+}
+
+GET product-example-test/_search?explain=true
+{
+
+  "rescore": {
+    "query": {
+      "rescore_query": {  
+        "function_score":{
+          "query": {
+            "match": {
+              "product_name": "product"
+            }
+          },
+          "functions": [{
+            "script_score": {
+              "script":{
+                "source": "Math.log10(doc['remaining_amount'].value * params['factor_remaining_amount']) * Math.log10(doc['sales'].value * params['factor_sales'])",
+                "params": {
+                  "factor_remaining_amount": 1.1,
+                  "factor_sales": 1.3
+                }
+              }
+            }
+          }
+          ],
+          "score_mode": "multiply",
+          "boost_mode": "multiply"
+        }
+      }
+    },
+    "window_size": 6
+  }
+}

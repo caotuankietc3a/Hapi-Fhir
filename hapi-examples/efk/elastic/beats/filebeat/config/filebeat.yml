@@ -1,17 +1,38 @@
 # https://github.com/elastic/beats/blob/master/filebeat/filebeat.reference.yml
 
-filebeat.inputs:
-  # - type: container
-  #   enabled: true
-  #   paths: -/var/lib/docker/containers/*/*.log
-  #   stream: all # can be all, stdout or stderr
-  - type: filestream
-    id: my-filestream-id
-    paths:
-      # - /var/log/*.log*
-      # - /var/log/dmesg*
-      - /usr/share/filebeat/*.log
-    prospector.scanner.exclude_files: ['\.gz$']
+filebeat.modules:
+  #------------------------------ PostgreSQL Module ------------------------------
+  - module: postgresql
+    # Logs
+    log:
+      enabled: true
+      # Set custom paths for the log files. If left empty,
+      # Filebeat will choose the paths depending on your OS.
+      var.paths: ["/usr/share/filebeat/data/postgresql-*.log"]
+      # Input configuration (advanced). Any input configuration option
+      # can be added under this section.
+      # input:
+  - module: nginx
+    access:
+      enabled: true
+      var.paths: ["/usr/share/filebeat/data/nginx.log"]
+  - module: apache
+    access:
+      enabled: true
+      var.paths: ["/usr/share/filebeat/data/apache.log"]
+# filebeat.inputs:
+#   # - type: container
+#   #   enabled: true
+#   #   paths: -/var/lib/docker/containers/*/*.log
+#   #   stream: all # can be all, stdout or stderr
+#   - type: filestream
+#     id: my-filestream-id
+#     paths:
+#       # - /var/log/*.log*
+#       # - /var/log/dmesg*
+#       - /usr/share/filebeat/*.log
+#     prospector.scanner.exclude_files: ['\.gz$']
+
 #========================== Filebeat autodiscover ==============================
 # See this URL on how to run Apache2 Filebeat module: # https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html
 filebeat.autodiscover:
