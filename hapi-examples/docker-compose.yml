@@ -1,14 +1,8 @@
 # Use postgres/example user/password credentials
 version: "3.1"
 services:
-  # httpd:
-  #   image: httpd
-  #   ports:
-  #     - "82:80"
-  #   networks:
-  #     - elastic-net
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
     container_name: elasticsearch
     environment:
       discovery.type: single-node
@@ -19,8 +13,7 @@ services:
       node.name: es01
       cluster.name: elasticsearch
     volumes:
-      - esdata:/usr/share/elasticsearch/data
-      # - esdata-test:/usr/share/elasticsearch/data
+      - esdata-test-1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
@@ -37,6 +30,7 @@ services:
       - ./efk/fluentd/conf/fluent.conf:/fluentd/etc/fluent.conf
       - /var/log/:/fluentd/log/auth/
       - ./efk/fluentd/logs:/fluentd/log/logs/
+      - ./efk/fluentd/templates/:/fluentd/templates/
     ports:
       - "24224:24224"
       - "24224:24224/udp"
@@ -47,7 +41,7 @@ services:
     networks:
       - elastic-net
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.7.1
+    image: docker.elastic.co/kibana/kibana:7.10.2
     container_name: kibana
     environment:
       SERVERNAME: kibana
@@ -59,76 +53,13 @@ services:
       - elasticsearch
     links: # Links kibana service to the elasticsearch container
       - elasticsearch
-    volumes:
-      - ./efk/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    # volumes:
+    #   - ./efk/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
     restart: always
     networks:
       - elastic-net
-  postgres:
-    image: postgres:14.8
-    container_name: postgres
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=hapi-fhir
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    volumes:
-      - postgresdb:/var/lib/postgresql/data
-      - $PWD/postgres/config/postgres.conf:/var/lib/postgresql/data/postgresql.conf
-      - $PWD/postgres/logs/:/var/lib/postgresql/data/pg_log/
-    networks:
-      - elastic-net
-      # filebeat:
-      #   image: docker.elastic.co/beats/filebeat:8.7.1
-      #   container_name: filebeat
-      #   user: root
-      #   volumes:
-      #     # - filebeat:/usr/share/filebeat/data
-      #     - /var/run/docker.sock:/var/run/docker.sock
-      #     - /var/lib/docker/containers/:/var/lib/docker/containers/
-      #     - $PWD/efk/elastic/beats/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml
-      #     - /var/log/:/var/log/
-      #     - /var/log/audit/:/var/log/audit/
-      #     # - $PWD/efk/elastic/beats/filebeat/test/*:/usr/share/filebeat/
-      #     - $PWD/postgres/logs/:/usr/share/filebeat/data/
-      #   environment:
-      #     - ELASTICSEARCH_HOST=${ELASTICSEARCH_HOST:-elasticsearch}
-      #     - KIBANA_HOST=${KIBANA_HOST:-kibana}
-      #   networks:
-      #     - elastic-net
-      #   # disable strict permission checks
-      #   command: ["--strict.perms=false"]
-      # metricbeat:
-      #   image: docker.elastic.co/beats/metricbeat:8.7.1
-      #   container_name: metricbeat
-      #   user: root
-      #   volumes:
-      #     - /proc:/hostfs/proc:ro
-      #     - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
-      #     - /:/hostfs:ro
-      #     - /var/run/docker.sock:/var/run/docker.sock
-      #     - metricbeat:/usr/share/metricbeat/data
-      #     - $PWD/efk/elastic/beats/metricbeat/config/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml
-      #   environment:
-      #     - ELASTICSEARCH_HOST=${ELASTICSEARCH_HOST:-elasticsearch}
-      #     - KIBANA_HOST=${KIBANA_HOST:-kibana}
-      #   networks:
-      #     - elastic-net
-      #   # disable strict permission checks
-      #   command: ["--strict.perms=false", "-system.hostfs=/hostfs"]
 volumes:
-  postgresdb:
-    driver: local
-  esdata:
-    driver: local
-  esdata-test:
-    driver: local
-  metricbeat:
-    driver: local
-  filebeat:
+  esdata-test-1:
     driver: local
 networks:
   elastic-net:

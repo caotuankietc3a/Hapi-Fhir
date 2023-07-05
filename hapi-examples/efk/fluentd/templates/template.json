@@ -1,0 +1,24 @@
+{
+  "template": "apache-log**",
+  "mappings": {
+    "properties": {
+      "geoip": {
+        "properties": {
+          "location": {
+            "type": "geo_point"
+          }
+        }
+      },
+      "response": {
+        "properties": {
+          "size": {
+            "type": "long"
+          },
+          "status_code": {
+            "type": "long"
+          }
+        }
+      }
+    }
+  }
+}
